@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Deploy with GitHub Pages — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html" aria-current="page" class="is-active">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="deploy-the-web-beta-with-github-pages">Deploy the web beta with GitHub Pages</h1>
+<p>The repository includes a manual GitHub Actions workflow that builds, tests, and deploys the verified static browser application.</p>
+<h2 id="before-publishing">Before publishing</h2>
+<p>Confirm in GitHub Desktop:</p>
+<pre><code class="language-text">Current Branch: feature/4.0-beta
+No local changes</code></pre>
+<p>Run locally:</p>
+<pre><code class="language-bash">npm run test:beta
+npm run build:web-beta
+npm run preview:web-beta</code></pre>
+<p>Complete the browser manual checks before publishing.</p>
+<h2 id="enable-github-pages">Enable GitHub Pages</h2>
+<ol>
+<li>Open the repository on GitHub.com.</li>
+<li>Select <strong>Settings</strong>.</li>
+<li>Select <strong>Pages</strong> under <strong>Code and automation</strong>.</li>
+<li>Under <strong>Build and deployment</strong>, set <strong>Source</strong> to <strong>GitHub Actions</strong>.</li>
+<li>Save the setting if GitHub presents a Save button.</li>
+</ol>
+<h2 id="run-the-deployment">Run the deployment</h2>
+<ol>
+<li>Open the repository’s <strong>Actions</strong> tab.</li>
+<li>Select <strong>Deploy ES2 Hero Studio Web Beta</strong>.</li>
+<li>Select <strong>Run workflow</strong>.</li>
+<li>Choose the tested branch or the final merged release branch.</li>
+<li>Select <strong>Run workflow</strong> again.</li>
+<li>Wait for both the <strong>build</strong> and <strong>deploy</strong> jobs to succeed.</li>
+<li>Open the deployment URL shown by the completed workflow.</li>
+</ol>
+<p>The workflow performs:</p>
+<ul>
+<li>a clean dependency installation;</li>
+<li>the complete beta regression suite;</li>
+<li>the verified web-beta build;</li>
+<li>GitHub Pages artifact upload; and</li>
+<li>deployment to the <code>github-pages</code> environment.</li>
+</ul>
+<p>No application secret or API key is required.</p>
+<h2 id="verify-the-hosted-release">Verify the hosted release</h2>
+<p>On the published address:</p>
+<ol>
+<li>Confirm the official icon and <strong>PUBLIC WEB BETA</strong> identity.</li>
+<li>Create a project.</li>
+<li>Add an image.</li>
+<li>Save or download the <code>.hsproj</code> file.</li>
+<li>Reopen it.</li>
+<li>Open Recovery Center and download a recovery copy.</li>
+<li>Run Release Preflight.</li>
+<li>Export a validated ZIP.</li>
+<li>Reload the site and confirm it opens normally.</li>
+<li>Disconnect from the network temporarily and confirm the cached application shell opens.</li>
+<li>Test at least Safari and one Chromium-based browser before broadly sharing the link.</li>
+</ol>
+<h2 id="updating-the-site">Updating the site</h2>
+<p>Commit and push the tested update, then run the same manual workflow again. GitHub Pages replaces the prior deployment after the new build succeeds. The generated service worker uses a versioned cache and removes older Hero Studio caches after activation.</p>
+<h2 id="rolling-back">Rolling back</h2>
+<p>Use the GitHub repository history to restore the last known-good release commit, test it locally, and rerun the workflow. Do not deploy untested working-tree files.</p>
+<h2 id="custom-domain-later">Custom domain later</h2>
+<p>A custom domain can be configured in <strong>Settings → Pages</strong> after the default Pages address is verified. The application uses relative production paths, so the same build can operate from a repository subpath or a custom-domain root.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

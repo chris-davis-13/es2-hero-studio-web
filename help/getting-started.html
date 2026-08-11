@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Getting Started — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html" aria-current="page" class="is-active">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="getting-started">Getting started</h1>
+<p>This walkthrough creates a single-hero mod package using the guided Basic-mode workflow.</p>
+<h2 id="start-with-the-guided-create-hero-wizard">Start with the guided Create Hero wizard</h2>
+<p>Choose <strong>Create Hero</strong> to work through identity, gameplay role, Starting Skills planning, Skill Tree structure, artwork, and review. The wizard applies editable recommendations only. After creation, Project Home shows <strong>Hero Readiness</strong> and opens the most useful unfinished area.</p>
+<h2 id="1-start-a-project">1. Start a project</h2>
+<p>Choose <strong>New hero project</strong> from the welcome screen. Save early using <strong>Save As…</strong> and choose a memorable <code>.hsproj</code> filename.</p>
+<p>A Hero Studio project is the editable source. It is not the same as the final ES2 mod ZIP.</p>
+<h2 id="2-use-project-home">2. Use Project Home</h2>
+<p>Project Home tracks six stages:</p>
+<ol>
+<li>Hero identity</li>
+<li>Gameplay definition</li>
+<li>Artwork and assets</li>
+<li>Skills and Skill Tree</li>
+<li>Localization</li>
+<li>Release readiness</li>
+</ol>
+<p>Select the recommended next action to move through the workflow.</p>
+<h2 id="3-enter-hero-data">3. Enter Hero Data</h2>
+<p>In Hero Data, complete the identity, Gameplay Definition, and package metadata. For Gameplay Definition, choose <strong>Load ES2 choices…</strong> once to index the local game data, then select affinity, class, and politics from dropdowns and use the searchable Ship Design selector. Existing projects keep older or custom values until you deliberately replace them.</p>
+<p>Choose <strong>Choose Starting Skills…</strong> to select the skills the hero already possesses when entering play. The searchable checkbox picker combines existing ES2 skills with custom skills in the project.</p>
+<p>The internal name is used in filenames and XML identifiers. Keep it stable after release whenever possible. See <a href="guided-gameplay.html">Guided Gameplay Definition</a>.</p>
+<h2 id="4-prepare-the-four-images">4. Prepare the four images</h2>
+<p>Asset Studio requires PNG files at these final sizes:</p>
+<div class="table-scroll"><table><thead><tr><th>Asset</th><th>Required size</th></tr></thead><tbody>
+<tr><td>Large</td><td>360 × 180</td></tr>
+<tr><td>Medium</td><td>180 × 240</td></tr>
+<tr><td>Mood</td><td>1324 × 712</td></tr>
+<tr><td>Mod icon</td><td>430 × 430</td></tr>
+</tbody></table></div>
+<p>Asset Studio can crop and resize source artwork. Inspect the result at full size before accepting it.</p>
+<p>Optional face and object detection retrieves MediaPipe model files from approved external hosts. The selected project image remains in the application; it is not intentionally uploaded by Hero Studio.</p>
+<h2 id="5-create-skills">5. Create skills</h2>
+<p>Open Skill Library and create reusable skill definitions. Basic mode provides guided effect templates for common operations. Add clear names and descriptions before placing skills in the Skill Tree.</p>
+<p>Select <strong>Save as Template</strong> when a skill will be useful in future projects. Individual effects can also be saved from their effect cards.</p>
+<h2 id="6-build-the-skill-tree">6. Build the Skill Tree</h2>
+<p>Assign skills to tiers, position the nodes, and connect prerequisites. Starting Skills are chosen separately in Hero Data. Project Health reports broken references and circular prerequisites. Select several nodes and choose <strong>Save branch</strong> to preserve them and their internal prerequisite connections as a reusable template.</p>
+<h2 id="use-in-context-help">Use in-context help</h2>
+<p>Select <strong>Learn</strong> at any time to search field explanations, workflow guidance, and the terminology glossary. Question-mark controls beside selected fields open the most relevant topic directly.</p>
+<h2 id="7-review-localization">7. Review localization</h2>
+<p>English is the default locale. Add other locales in Localization, review fallback values, and resolve missing required strings.</p>
+<h2 id="8-save-and-reopen">8. Save and reopen</h2>
+<p>Save the project, close it, and reopen it. This confirms that the editable project is stored correctly before release work begins.</p>
+<h2 id="9-run-project-health">9. Run Project Health</h2>
+<p>Resolve blocking findings in Project Health and the Problems panel. Warnings may be acceptable, but each should be understood before release.</p>
+<h2 id="10-run-release-preflight">10. Run Release Preflight</h2>
+<p>Open <strong>Export &amp; Release Preflight</strong>. Confirm metadata, images, localization, dependency declarations, XML validity, and release notes.</p>
+<p>The first public beta exports one hero per mod package. A project can contain multiple heroes for authoring, but validated package export is blocked until only one exportable hero remains.</p>
+<h2 id="11-export">11. Export</h2>
+<p>Create a validated ZIP for distribution or a clean mod folder for local testing. Keep the <code>.hsproj</code> file as the editable source and the ZIP as the release artifact.</p>
+<h3 id="choose-existing-es2-skills-without-memorizing-ids">Choose existing ES2 skills without memorizing IDs</h3>
+<p>In <strong>Skill Library</strong>, choose <strong>Browse Existing ES2 Skills…</strong>. The desktop app can index your installed game data read-only; the browser edition lets you select the ES2 Public folder or XML files. Search by name, class, faction, or internal ID, check one or more skills, and choose <strong>Add Selected Skills</strong>. Use <strong>Create custom skill</strong> when you want Hero Studio to generate a new skill definition and effects. See <a href="es2-skill-catalog.html">ES2 Skill Catalog</a>.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

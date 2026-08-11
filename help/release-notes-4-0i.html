@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>4.0I Release Notes — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html" aria-current="page" class="is-active">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-0-4-0-beta-9">ES2 Hero Studio 0.4.0-beta.9</h1>
+<h2 id="milestone-4-0i-guided-creation-and-hero-readiness">Milestone 4.0I — Guided Creation and Hero Readiness</h2>
+<p>Milestone 4.0I focuses on the final beginner-facing workflow refinements after the ES2 Skill Catalog and Guided Gameplay Definition. It adds an optional creation wizard, a continuously updated Hero Readiness checklist, context-aware recommendations, plain-language Skill Tree progression analysis, guided artwork requirements, and non-binding starter hero structures.</p>
+<h3 id="added">Added</h3>
+<ul>
+<li>Six-step optional <strong>Create Hero</strong> wizard.</li>
+<li>Editable gameplay-profile recommendations during hero creation.</li>
+<li>Starting Skills planning step that points first-time users to the searchable 4.0H picker.</li>
+<li>Four starter progression structures: Fleet Commander, Governor / Administrator, Balanced Generalist, and Advanced Blank Hero.</li>
+<li><strong>Hero Readiness</strong> on Project Home with Ready, Needs attention, and Review states.</li>
+<li>Context-aware suggestions for unusual profile combinations, missing Starting Skills, Starting Skills outside the Skill Tree, and common faction skill themes.</li>
+<li><strong>Check progression</strong> command in Skill Tree.</li>
+<li>Plain-language progression findings for reachability, entry points, tier order, tier gaps, and higher-tier roots.</li>
+<li><strong>Show skill</strong> navigation from progression findings.</li>
+<li>Guided artwork source-quality panel with all four exact ES2 output sizes.</li>
+<li>Learning Center topics for Hero Readiness, the Create Hero wizard, and Skill Tree progression checks.</li>
+<li><code>npm run test:4.0i</code> focused regression coverage.</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Version advanced to <code>0.4.0-beta.9</code> and milestone marker to <code>4.0I</code>.</li>
+<li>Complete beta regression suite expanded to 19 checks.</li>
+<li>Project Home now answers “what should I work on next?” separately from technical validation.</li>
+<li>New heroes can begin from sensible editable defaults without requiring the author to understand every technical field first.</li>
+<li>Project schema remains version <code>7</code>.</li>
+<li>The one-hero-per-export-package safeguard remains unchanged.</li>
+</ul>
+<h3 id="safety-and-compatibility">Safety and compatibility</h3>
+<p>4.0I does not change generated ES2 XML rules or package structure. Guided recommendations do not silently rewrite existing heroes. The progression checker is advisory and does not block unusual Skill Trees. Artwork guidance reports source-size tradeoffs without preventing generation. Existing projects open without migration.</p>
+<h3 id="still-deliberately-excluded">Still deliberately excluded</h3>
+<p>Milestone 4.0I does not add multi-hero package export, installed-mod comparison, one-click mod installation, automatic mod-version bumping, cloud storage, or user accounts.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

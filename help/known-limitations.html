@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Known Limitations — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html" aria-current="page" class="is-active">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="known-limitations-0-4-0-public-beta">Known limitations — 0.4.0 public beta</h1>
+<h2 id="one-hero-per-exported-mod-package">One hero per exported mod package</h2>
+<p>Projects can contain multiple heroes, but validated release export supports one hero per package. This avoids collisions in shared ES2 XML files.</p>
+<h2 id="unsigned-macos-application">Unsigned macOS application</h2>
+<p>The desktop beta is not notarized or code-signed. First launch requires the macOS right-click <strong>Open</strong> approval process.</p>
+<h2 id="apple-silicon-is-the-primary-desktop-package">Apple Silicon is the primary desktop package</h2>
+<p>The ARM64 package is the supported public desktop beta. Intel packaging is an assessment path and requires testing on Intel hardware before distribution.</p>
+<h2 id="native-windows-package-deferred">Native Windows package deferred</h2>
+<p>No Windows installer is currently published. The browser public beta is the supported cross-platform route while feedback is gathered about any remaining need for Windows-only desktop capabilities.</p>
+<h2 id="browser-file-access-varies">Browser file access varies</h2>
+<p>All supported browsers can use project upload/download and validated ZIP export. Direct saving to an approved project file, recent-file reopening, and clean-folder writing depend on browser capability and permission support.</p>
+<h2 id="browser-recovery-is-not-permanent-storage">Browser recovery is not permanent storage</h2>
+<p>The web beta keeps latest and previous autosaves in IndexedDB when available. Browser or private-mode cleanup, storage pressure, or clearing site data can remove them. Download <code>.hsproj</code> backups regularly.</p>
+<h2 id="offline-image-detection-may-be-limited">Offline image detection may be limited</h2>
+<p>The offline application shell caches Hero Studio itself. Automatic face and object detection may still need MediaPipe runtime/model files from external hosts. Manual cropping remains available.</p>
+<h2 id="no-direct-steam-workshop-upload">No direct Steam Workshop upload</h2>
+<p>Hero Studio prepares package files and Workshop metadata but does not upload directly to Steam in this release.</p>
+<h2 id="third-party-xml-reconstruction-is-not-always-lossless">Third-party XML reconstruction is not always lossless</h2>
+<p>ES2 XML cannot represent all Hero Studio editor metadata. Hero Studio-generated ZIPs include a project snapshot for lossless reimport. Third-party mods without that snapshot are reconstructed from recognized XML and may require manual review.</p>
+<h2 id="unsupported-xml-requires-review">Unsupported XML requires review</h2>
+<p>Some imported files or constructs may be preserved rather than represented in guided editors. Advanced mode exposes preservation and semantic-diff information.</p>
+<h2 id="no-automatic-desktop-updater">No automatic desktop updater</h2>
+<p>Install later desktop beta versions manually. Keep project files separate from the application bundle. The web beta updates when a new verified deployment becomes active.</p>
+<h2 id="no-collaborative-cloud-storage">No collaborative cloud storage</h2>
+<p>Projects are local files or browser data. Hero Studio does not provide accounts, shared editing, or cloud synchronization.</p>
+<h2 id="template-libraries-are-local">Template libraries are local</h2>
+<p>Desktop and browser template libraries do not synchronize automatically. Browser site-data cleanup can remove browser templates. Use <code>.hstemplates</code> export and import to back up or transfer important templates.</p>
+<h2 id="es2-skill-catalog">ES2 Skill Catalog</h2>
+<p>The catalog reflects the ES2 data that the user indexes. Refresh or re-import it after game updates, DLC/content changes, or moving the installation. Browser folder selection capabilities vary by browser, so direct XML multi-selection remains the fallback. Some game skills may have intentionally unusual, internal, faction-specific, or content-specific behavior; catalog presence is not a promise that every combination is appropriate for every custom hero. Existing ES2 skills are reference-only and their game-owned effects are not editable inside Hero Studio unless the author deliberately creates a separate custom skill.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

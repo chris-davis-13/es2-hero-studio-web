@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Privacy and Local Processing — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html" aria-current="page" class="is-active">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="privacy-and-local-processing">Privacy and local processing</h1>
+<h2 id="project-data">Project data</h2>
+<p>Hero Studio is designed as a client-side application. Project files, imported mod ZIPs, selected images, generated XML, localization, and exported packages are processed on the user&#039;s device. The application does not include an account system, analytics service, advertising system, or project-upload service.</p>
+<p>The browser edition is delivered as static application files. Its hosting service necessarily receives ordinary web requests for the application assets, but Hero Studio does not intentionally transmit project content to that host.</p>
+<h2 id="network-activity">Network activity</h2>
+<p>Most features do not require a network connection after the web application shell is cached. Optional automatic face and object detection retrieves MediaPipe WebAssembly/runtime files and model files from:</p>
+<ul>
+<li><code>cdn.jsdelivr.net</code></li>
+<li><code>storage.googleapis.com</code></li>
+</ul>
+<p>Hero Studio does not intentionally send the selected project image to those hosts; detection runs locally after the model resources load. Network tools, operating-system inspection, or future dependency changes may be used to independently verify this behaviour.</p>
+<h2 id="browser-storage">Browser storage</h2>
+<p>The web beta may store:</p>
+<ul>
+<li>interface preferences in local browser storage;</li>
+<li>latest and previous recovery snapshots in IndexedDB;</li>
+<li>user-approved recent project file handles where the browser supports them;</li>
+<li>service-worker caches for offline application assets; and</li>
+<li>non-project runtime diagnostics.</li>
+</ul>
+<p>Clearing site data removes browser-managed Hero Studio recovery, preferences, approved handles, and offline caches. Private-browsing sessions may discard them automatically. Download project files and recovery copies regularly.</p>
+<p>The <strong>Request persistent recovery storage</strong> control asks the browser to reduce automatic storage eviction. The browser decides whether to grant that request.</p>
+<h2 id="desktop-storage">Desktop storage</h2>
+<p>The desktop application may store:</p>
+<ul>
+<li>interface preferences;</li>
+<li>recent-project paths;</li>
+<li>latest and previous recovery snapshots;</li>
+<li>rotated pre-save backups beside project files;</li>
+<li>runtime logs; and</li>
+<li>diagnostic environment information.</li>
+</ul>
+<p>Open <strong>Help → Open Application Support Folder</strong> to inspect desktop application-support data.</p>
+<h2 id="diagnostic-reports">Diagnostic reports</h2>
+<p>Runtime Diagnostics is designed to exclude project content. Review every report before sharing it. Do not attach <code>.hsproj</code> files, imported ZIPs, images, or logs containing sensitive paths unless sharing them is necessary and intentional.</p>
+<h2 id="exported-content">Exported content</h2>
+<p>Exported mod packages contain the authoring content selected for release, including images, localization, metadata, XML, manifests, and a Hero Studio project snapshot. Inspect the ZIP before public distribution.</p>
+<h2 id="es2-skill-catalog">ES2 Skill Catalog</h2>
+<p>The desktop Skill Catalog reads selected or automatically detected Endless Space 2 <code>Public</code> XML files in read-only mode. The browser edition reads only folders/files the user explicitly selects. Parsed catalog metadata is stored locally in the desktop profile or browser storage. Hero Studio does not upload the selected game XML or catalog data. Clearing the catalog cache does not alter the ES2 installation or remove existing skill assignments from saved projects.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

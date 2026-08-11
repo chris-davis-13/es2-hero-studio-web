@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Troubleshooting — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html" aria-current="page" class="is-active">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="troubleshooting">Troubleshooting</h1>
+<h2 id="the-unsigned-app-will-not-open">The unsigned app will not open</h2>
+<p>Control-click or right-click the app in Applications and choose <strong>Open</strong>. Approve the prompt. Do not disable Gatekeeper globally.</p>
+<h2 id="a-blank-window-appears">A blank window appears</h2>
+<ol>
+<li>Close the app.</li>
+<li>Reopen it.</li>
+<li>Open <strong>Help → Show Main Process Log</strong>.</li>
+<li>Copy Runtime Diagnostics if the interface opens.</li>
+<li>Include the log and version in a beta issue, after checking that the material contains no private information.</li>
+</ol>
+<p>The global error boundary should display a recovery screen instead of leaving an entirely blank renderer after most interface failures.</p>
+<h2 id="a-project-will-not-open">A project will not open</h2>
+<p>Hero Studio checks rotated pre-save backups when the saved project is damaged. A recovered backup opens as unsaved. Use <strong>Save As…</strong> and do not overwrite the damaged original until the recovered content has been reviewed.</p>
+<h2 id="unsaved-work-is-missing">Unsaved work is missing</h2>
+<p>Open <strong>Settings → Recovery Center</strong>. Review Latest autosave and Previous autosave. Restore the most recent valid snapshot, then save it as a project file.</p>
+<h2 id="saving-fails">Saving fails</h2>
+<p>Check:</p>
+<ul>
+<li>destination permissions;</li>
+<li>available disk space;</li>
+<li>whether the file is locked by another application;</li>
+<li>whether the destination drive is connected; and</li>
+<li>whether the path is writable.</li>
+</ul>
+<p>Try <strong>Save As…</strong> to a local folder such as Documents.</p>
+<h2 id="export-fails">Export fails</h2>
+<p>Run Release Preflight and resolve blockers. For filesystem errors, choose a local writable destination. Failed clean-folder exports should not leave a half-built package; temporary staging material is cleaned up or rolled back.</p>
+<h2 id="images-fail-validation">Images fail validation</h2>
+<p>Confirm PNG format and required dimensions. Reimport the original source into Asset Studio and use crop/resize rather than renaming a non-PNG file.</p>
+<h2 id="face-or-object-detection-is-unavailable">Face or object detection is unavailable</h2>
+<p>Automatic detection requires network access to load MediaPipe runtime/model files from approved external hosts. Manual crop and positioning remain available without detection.</p>
+<h2 id="an-imported-mod-looks-different">An imported mod looks different</h2>
+<p>Open XML Diff &amp; Import Safety. Review semantic changes, unsupported files, preserved XML, and snapshot warnings. Third-party XML may not contain all editor-only information used by Hero Studio.</p>
+<h2 id="where-files-are-stored">Where files are stored</h2>
+<p>Open <strong>Help → Open Application Support Folder</strong> for preferences, recovery snapshots, recent-project information, and logs. Your <code>.hsproj</code> and exported ZIP files remain in locations you selected.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

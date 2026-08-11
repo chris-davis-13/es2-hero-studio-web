@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Use the Browser Beta — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html" aria-current="page" class="is-active">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="browser-public-beta">Browser public beta</h1>
+<p>ES2 Hero Studio Web Beta provides the same schema-v7 hero authoring, validation, import review, and validated ZIP export workflow as the desktop beta without requiring an application installation.</p>
+<h2 id="start-safely">Start safely</h2>
+<ol>
+<li>Open the published HTTPS web address.</li>
+<li>Read the <strong>Web Beta</strong> status bar near the top of the application.</li>
+<li>Select <strong>New hero project</strong>, <strong>Open project</strong>, or <strong>Review mod ZIP</strong>.</li>
+<li>Download a project copy after meaningful work and before clearing browser data.</li>
+</ol>
+<p>Project and image content is processed locally by the browser. Hero Studio does not provide an account, cloud project storage, or a project-upload service.</p>
+<h2 id="saving-projects">Saving projects</h2>
+<p>Browser saving has two possible behaviours:</p>
+<ul>
+<li><strong>Direct file saving:</strong> browsers with the File System Access API can reopen and overwrite a user-approved <code>.hsproj</code> file after permission is granted.</li>
+<li><strong>Download saving:</strong> other browsers download a new <code>.hsproj</code> file. Keep the newest copy in a known folder and select it again with <strong>Open</strong> when returning.</li>
+</ul>
+<p>The application identifies which behaviour is active in the Web Beta status bar.</p>
+<h2 id="browser-recovery">Browser recovery</h2>
+<p>The browser edition stores the latest and previous unsaved recovery snapshots in IndexedDB when available. Open <strong>Settings → Recovery Center</strong> to restore, download, or delete them.</p>
+<p>Browser recovery is a convenience, not a replacement for a downloaded project file. Site data may be removed by private-browsing rules, browser cleanup, storage pressure, or user action. Use <strong>Download copy</strong> in Recovery Center when preserving a recovery snapshot matters.</p>
+<p>The <strong>Request persistent recovery storage</strong> control asks the browser to reduce automatic eviction risk. The browser may still decline the request.</p>
+<h2 id="mod-export">Mod export</h2>
+<p><strong>Export validated ZIP</strong> works in supported browsers and downloads the finished ES2 package.</p>
+<p>Direct clean-folder writing is available only when the browser grants directory access. When that capability is unavailable, download the validated ZIP and extract it into the appropriate Endless Space 2 Mods folder.</p>
+<h2 id="offline-use">Offline use</h2>
+<p>After a successful production load, the web beta installs an offline application shell through a service worker. Core authoring and previously cached workspaces can continue without a network connection.</p>
+<p>Automatic face and object detection may still require its external MediaPipe runtime and model resources. Manual crop and image editing remain available when those resources are unavailable.</p>
+<h2 id="install-as-a-web-app">Install as a web app</h2>
+<p>Some browsers offer <strong>Install web app</strong> in the Hero Studio status bar or their own browser menu. Installation creates an app-like launcher but does not change where projects are stored. Continue downloading project backups.</p>
+<h2 id="browser-support">Browser support</h2>
+<p>The release is designed for current desktop versions of Safari, Chrome, Edge, and Firefox. Capability differences are handled through fallbacks:</p>
+<ul>
+<li>Chrome and Edge typically support direct project and folder access.</li>
+<li>Safari and Firefox may use upload/download project saving and validated ZIP export.</li>
+<li>Private browsing may reduce or remove recovery persistence.</li>
+</ul>
+<p>The status bar reports the capabilities actually detected rather than relying only on the browser name.</p>
+<h2 id="privacy-summary">Privacy summary</h2>
+<p>Hero project data, selected images, imported ZIPs, generated XML, and export assembly remain in the browser process. Optional automatic image detection downloads code and model resources from the hosts listed in <strong>Privacy and Local Processing</strong>. No analytics or advertising service is included.</p>
+<h2 id="feedback">Feedback</h2>
+<p>When reporting a browser issue, include:</p>
+<ul>
+<li>browser name and version;</li>
+<li>operating system;</li>
+<li>whether the app was opened in a tab or installed mode;</li>
+<li>the result from Runtime Diagnostics;</li>
+<li>the action that failed; and</li>
+<li>whether the problem also occurs with the bundled example project.</li>
+</ul>
+<p>Do not share private project files or images unless doing so is necessary and intentional.</p>
+<h2 id="importing-the-es2-skill-catalog">Importing the ES2 Skill Catalog</h2>
+<p>The browser cannot silently inspect an installed game. In Skill Library, choose <strong>Browse Existing ES2 Skills…</strong>, then select the ES2 <code>Public</code> folder where folder input is supported or select the relevant XML files directly. Parsing and catalog storage remain local to the browser. Re-import the files when the installed game data changes.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

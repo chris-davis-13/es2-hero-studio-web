@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>GitHub Release Procedure — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html" aria-current="page" class="is-active">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="publish-the-public-beta-through-github">Publish the public beta through GitHub</h1>
+<p>Complete this process only after the 4.0D regression suite, production build, ARM64 packaging, installed-app checks, and public-beta assembly all pass.</p>
+<h2 id="1-commit-and-push-4-0d">1. Commit and push 4.0D</h2>
+<p>Commit on <code>feature/4.0-beta</code> with:</p>
+<p><code>Complete milestone 4.0D Documentation Branding and Public Beta</code></p>
+<p>Push origin and confirm GitHub Desktop reports no local changes.</p>
+<h2 id="2-create-the-public-beta-bundle">2. Create the public-beta bundle</h2>
+<p>On the Apple Silicon Mac used for final validation, run:</p>
+<pre><code class="language-bash">npm run release:public-beta:arm64</code></pre>
+<p>Review:</p>
+<ul>
+<li><code>release/release-verification-arm64.json</code></li>
+<li><code>release/public-beta/ES2-Hero-Studio-0.4.0-beta.4-arm64/public-beta-manifest.json</code></li>
+<li><code>release/public-beta/ES2-Hero-Studio-0.4.0-beta.4-arm64/SHA256SUMS.txt</code></li>
+</ul>
+<h2 id="3-decide-whether-to-merge-to-main">3. Decide whether to merge to main</h2>
+<p>For a durable public release, merge the fully tested beta branch into <code>main</code> before creating the release tag. Do not merge until the final installed application has been tested.</p>
+<p>In GitHub Desktop:</p>
+<ol>
+<li>Switch to <code>main</code>.</li>
+<li>Fetch origin.</li>
+<li>Choose <strong>Branch → Merge into current branch…</strong>.</li>
+<li>Select <code>feature/4.0-beta</code>.</li>
+<li>Confirm there are no conflicts.</li>
+<li>Push origin.</li>
+</ol>
+<p>If the repository intentionally releases directly from the beta branch, create the tag against the exact tested <code>feature/4.0-beta</code> commit instead.</p>
+<h2 id="4-draft-the-github-release">4. Draft the GitHub Release</h2>
+<p>On GitHub:</p>
+<ol>
+<li>Open the repository.</li>
+<li>Choose <strong>Releases</strong>.</li>
+<li>Choose <strong>Draft a new release</strong>.</li>
+<li>Create tag <code>v0.4.0-beta.4</code> against the tested release commit.</li>
+<li>Title the release <code>ES2 Hero Studio 0.4.0-beta.4</code>.</li>
+<li>Mark it as a pre-release.</li>
+<li>Use <code>docs/Public-Beta-Release-Notes.md</code> as the release notes.</li>
+<li>Attach the ARM64 DMG, ARM64 ZIP, <code>SHA256SUMS.txt</code>, and the example <code>.hsproj</code> file.</li>
+<li>Review every attachment and publish.</li>
+</ol>
+<h2 id="5-preserve-the-release-state">5. Preserve the release state</h2>
+<p>Do not overwrite attached beta artifacts after publication. A corrected build should receive a new version and tag.</p>
+<p>The browser public beta is implemented as milestone 4.0E on <code>feature/4.0-beta</code>. Preserve the tagged 4.0D desktop artifacts, then follow <code>Web-Deployment-GitHub-Pages.md</code> to publish the verified browser release.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Templates and Contextual Guidance — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html" aria-current="page" class="is-active">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="templates-and-contextual-guidance">Templates and contextual guidance</h1>
+<p>Milestone 4.0F adds a local reusable Template Library and in-context learning throughout the authoring workflow. These features improve speed and understanding without changing the project schema or ES2 export format.</p>
+<h2 id="template-library">Template Library</h2>
+<p>Open <strong>Create → Template Library</strong> to capture and reuse authoring work across projects.</p>
+<p>Hero Studio supports three template types:</p>
+<ul>
+<li><strong>Skill templates</strong> preserve the skill ID, display name, description, category, tags, and guided or expert effects.</li>
+<li><strong>Effect templates</strong> preserve one complete effect configuration so it can be appended to another shared skill.</li>
+<li><strong>Tree branch templates</strong> preserve selected Skill Tree nodes, relative positions, tiers, starting-skill status, and prerequisite connections between the selected nodes.</li>
+</ul>
+<p>Templates are separate from the open <code>.hsproj</code> project. They are stored locally by the current desktop application or browser site until exported.</p>
+<h2 id="capture-a-template">Capture a template</h2>
+<h3 id="capture-a-skill">Capture a skill</h3>
+<ol>
+<li>Open <strong>Skill Library</strong>.</li>
+<li>Select the skill.</li>
+<li>Choose <strong>Save as Template</strong>.</li>
+<li>Enter a clear template name.</li>
+</ol>
+<p>The same action is also available from the Template Library&#039;s <strong>Capture from this project</strong> panel.</p>
+<h3 id="capture-an-effect">Capture an effect</h3>
+<p>Choose <strong>Save template</strong> on an effect card, or select an effect in the Template Library capture panel. Only that effect configuration is stored.</p>
+<h3 id="capture-a-skill-tree-branch">Capture a Skill Tree branch</h3>
+<ol>
+<li>Open <strong>Skill Tree</strong>.</li>
+<li>Select one or more nodes.</li>
+<li>Choose <strong>Save branch</strong>.</li>
+<li>Name the branch.</li>
+</ol>
+<p>Only prerequisite edges whose source and target are both selected are included. Use <strong>Save complete tree template</strong> in Template Library when the entire tree should be captured.</p>
+<h2 id="preview-and-apply">Preview and apply</h2>
+<p>Select a template to see its contents and application preview. Hero Studio reports the number of skills, effects, nodes, and prerequisite edges that will be added.</p>
+<p>Applying a template changes the project as <strong>one undoable action</strong>. Template-library maintenance itself—renaming, favoriting, duplicating, importing, or deleting templates—is local application data and is not part of project Undo history.</p>
+<h3 id="skill-id-conflicts">Skill ID conflicts</h3>
+<p>When a skill template uses an ID already present in the project, choose one of these policies:</p>
+<ul>
+<li><strong>Create a uniquely named copy</strong> keeps the existing skill and creates a safe suffixed ID.</li>
+<li><strong>Replace the existing shared skill</strong> updates that definition and synchronizes hero nodes that reference it.</li>
+<li><strong>Keep the existing skill unchanged</strong> does not apply the template.</li>
+</ul>
+<p>Branch templates always create collision-safe skill IDs. The application preview reports any names that will require remapping.</p>
+<h2 id="organize-and-move-templates">Organize and move templates</h2>
+<p>The library supports search, type filters, favorites, tags, sorting, duplication, rename, and deletion.</p>
+<p>Choose <strong>Export library…</strong> to create an <code>.hstemplates</code> file. Import that file in another Hero Studio browser, device, or desktop installation. During import, Hero Studio can replace templates with matching internal template IDs or keep both copies.</p>
+<p>Template files contain only captured template data. They do not include project images, unrelated heroes, recovery snapshots, or installed-game files.</p>
+<h2 id="local-storage-boundaries">Local-storage boundaries</h2>
+<p>Desktop and browser template libraries are local to their own application storage. They do not synchronize automatically. Use <code>.hstemplates</code> export and import to move a library between environments.</p>
+<p>Clearing browser site data may remove the browser&#039;s local template library. Keep an exported template-library backup when the templates are important.</p>
+<h2 id="contextual-guidance">Contextual guidance</h2>
+<p>Select <strong>Learn</strong> in the application header or workspace toolbar to open the searchable Learning Center. It contains:</p>
+<ul>
+<li>field and workflow explanations;</li>
+<li>examples of valid values;</li>
+<li>ES2 and Hero Studio terminology;</li>
+<li>Basic- and Advanced-mode guidance;</li>
+<li>workspace-specific results; and</li>
+<li>links from validation findings to a relevant explanation.</li>
+</ul>
+<p>Question-mark controls beside selected fields open the associated topic directly. Disabled template controls include a reason in their tooltip.</p>
+<h2 id="workspace-tips">Workspace tips</h2>
+<p>Each workspace can show a short contextual tip. Dismiss a tip for that workspace using its close control. To show or hide contextual tips globally, use <strong>Settings → Show contextual tips</strong>.</p>
+<p>The complete Learning Center remains available even when workspace tips are hidden.</p>
+<h2 id="validation-remains-authoritative">Validation remains authoritative</h2>
+<p>Contextual guidance explains concepts and recommended workflows. It does not certify that a value exists in Endless Space 2 or that a package will work in game. <strong>Project Health</strong> and <strong>Release Preflight</strong> remain the final application checks, and custom or dependency-provided identifiers may still require in-game testing.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>ES2 Skill Catalog — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html" aria-current="page" class="is-active">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="es2-skill-catalog-and-guided-skill-selection">ES2 Skill Catalog and Guided Skill Selection</h1>
+<p>Milestone 4.0G adds a searchable catalog of the hero skills available in the user&#039;s own Endless Space 2 installation. The goal is to let a first-time hero author choose existing skills by name and description instead of already knowing ES2 internal skill identifiers.</p>
+<h2 id="why-the-catalog-reads-the-installed-game">Why the catalog reads the installed game</h2>
+<p>Hero Studio does not ship a frozen hand-maintained list of game skills. The desktop edition reads the relevant XML from the installed game&#039;s <code>Public</code> data, and the browser edition indexes XML that the user explicitly selects. This makes the catalog reflect the user&#039;s current base game, installed expansions, and game-data revisions without requiring a Hero Studio update every time the available skill definitions change.</p>
+<p>The scan is read-only. Hero Studio never modifies the ES2 installation while building the catalog.</p>
+<h2 id="desktop-workflow">Desktop workflow</h2>
+<ol>
+<li>Open <strong>Skill Library</strong>.</li>
+<li>Choose <strong>Browse Existing ES2 Skills…</strong>.</li>
+<li>On first use, choose <strong>Find Endless Space 2 Automatically</strong>.</li>
+<li>If automatic detection cannot locate the installation, choose <strong>Locate Endless Space 2…</strong> and select either the ES2 installation folder or its <code>Public</code> data folder.</li>
+<li>Hero Studio indexes hero-skill definitions, skill-tree references, relevant GUI elements, and English localization data.</li>
+<li>Search or filter the catalog, select one or more checkboxes, and choose <strong>Add Selected Skills</strong>.</li>
+</ol>
+<p>The resulting catalog is cached locally for quick reuse. Use <strong>Refresh catalog</strong> after installing or removing game content, after a game update, or whenever you want Hero Studio to re-read the installed data.</p>
+<h2 id="browser-workflow">Browser workflow</h2>
+<p>A website cannot silently inspect an arbitrary game installation. In the browser edition, open <strong>Browse Existing ES2 Skills…</strong> and choose either:</p>
+<ul>
+<li><strong>Choose ES2 Public Folder</strong> to index a selected <code>Public</code> directory where folder selection is supported; or</li>
+<li><strong>Choose ES2 XML Files…</strong> to select the relevant XML files directly.</li>
+</ul>
+<p>For the richest labels, include the hero-skill definitions, hero skill-tree definitions, GUI elements, and English localization XML. If localization is not available, Hero Studio still lists discovered internal skill IDs and generates a readable fallback name.</p>
+<p>Nothing is uploaded. Selected files are read in the browser and the resulting catalog is stored in that browser profile.</p>
+<h2 id="searching-and-filtering">Searching and filtering</h2>
+<p>The picker searches across:</p>
+<ul>
+<li>localized display name;</li>
+<li>internal skill ID;</li>
+<li>description;</li>
+<li>class associations;</li>
+<li>faction associations; and</li>
+<li>skill-tree names in which the skill was found.</li>
+</ul>
+<p>Scope filters classify entries as <strong>Universal</strong>, <strong>Class</strong>, <strong>Faction</strong>, or <strong>Other ES2</strong> based on the game skill-tree metadata. These labels are guidance rather than hard restrictions. Advanced hero authors can still use unusual combinations when ES2 accepts the referenced skill.</p>
+<p>Status filters distinguish:</p>
+<ul>
+<li><strong>Available</strong> — can be added to the active hero;</li>
+<li><strong>Assigned</strong> — already present on the active hero; and</li>
+<li><strong>Conflicts</strong> — an existing custom project skill uses the same internal ID.</li>
+</ul>
+<p>A custom-ID conflict is not overwritten automatically. Rename the custom skill or resolve the conflict deliberately before assigning the existing ES2 skill.</p>
+<h2 id="existing-es2-skills-versus-custom-skills">Existing ES2 skills versus custom skills</h2>
+<p>Hero Studio now makes an important distinction:</p>
+<p><strong>Existing ES2 skill</strong> : Supplied by the installed game. Hero Studio stores a reference to its internal <code>HeroSkillDefinition</code> ID. The game&#039;s own effect definitions, GUI entry, and localization remain authoritative.</p>
+<p><strong>Custom Hero Studio skill</strong> : Authored inside the project. Hero Studio generates the skill definition, simulation descriptor, GUI element, and localization required by the exported mod.</p>
+<p>Existing ES2 skills are intentionally read-only for their game-owned ID, name, category, and effects. You may still change their position, tier, and prerequisite relationships inside the custom hero&#039;s Skill Tree.</p>
+<p>To create a separately authored variation, use <strong>Duplicate as Custom</strong> in Skill Library. The duplicate receives a new collision-safe ID and becomes editable. Because Hero Studio does not copy opaque game-owned effects out of an existing skill, review and author the custom duplicate&#039;s effects before export.</p>
+<h2 id="templates">Templates</h2>
+<p>Existing ES2 skills remain reusable through the Skill Catalog, so a single native catalog entry cannot be saved as a normal custom skill template. Branch templates can preserve existing ES2 references alongside custom skills. When a branch is applied, Hero Studio reuses or recreates the reference-only library entry rather than generating a duplicate game skill definition.</p>
+<p>Effect templates cannot be applied directly to an existing ES2 skill. Duplicate the skill as custom first.</p>
+<h2 id="export-behavior">Export behavior</h2>
+<p>The custom Skill Tree XML includes every selected skill, including references to existing ES2 skills. Hero Studio generates <code>HeroSkillDefinition</code>, simulation-descriptor, GUI, and localization entries only for custom skills.</p>
+<p>Release validation recognizes the catalog-assigned ES2 IDs as intentional external game references. This avoids the false error that would otherwise occur when a skill appears in the generated tree but is deliberately absent from the mod&#039;s generated <code>HeroSkillDefinitions.xml</code>.</p>
+<p>The catalog itself is not required at export time. The selected reference metadata is saved in the <code>.hsproj</code> project, so a project using existing ES2 skills can be reopened and exported even after the local catalog cache is cleared.</p>
+<h2 id="safety-and-privacy">Safety and privacy</h2>
+<ul>
+<li>Desktop scanning is read-only.</li>
+<li>The browser reads only files or folders the user selects.</li>
+<li>Catalog data is stored locally.</li>
+<li>No catalog or game XML is uploaded by Hero Studio.</li>
+<li>Clearing the catalog does not remove skills already assigned to a project.</li>
+<li>The ES2 installation is never changed by this feature.</li>
+</ul>
+<p>Release Preflight remains the final authority for project readiness. A catalog entry confirms that Hero Studio found a skill identifier in the indexed game data; it does not guarantee every unconventional class, faction, DLC, or mod combination will behave as intended in every ES2 game state.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

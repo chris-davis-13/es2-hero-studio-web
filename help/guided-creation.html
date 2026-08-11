@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Guided Creation and Hero Readiness — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html" aria-current="page" class="is-active">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="guided-creation-experience">Guided Creation Experience</h1>
+<p>Milestone 4.0I refines the beginner experience around three questions: <strong>What does this mean? What should I choose? What should I do next?</strong> The new guidance is optional and advisory. It does not replace Project Health, XML validation, or Release Preflight.</p>
+<h2 id="optional-six-step-create-hero-wizard">Optional six-step Create Hero wizard</h2>
+<p>Choose <strong>Create Hero</strong> to open the guided workflow:</p>
+<ol>
+<li><strong>Identity &amp; presentation</strong> — name, description, and an optional knowledge profile.</li>
+<li><strong>Gameplay role</strong> — review editable affinity, class, politics, and ship-design recommendations.</li>
+<li><strong>Starting skills</strong> — decide whether to review the searchable Starting Skills picker immediately after creation or later.</li>
+<li><strong>Skill progression</strong> — choose a non-binding starter structure such as Fleet Commander, Governor / Administrator, Balanced Generalist, or Advanced Blank Hero.</li>
+<li><strong>Artwork</strong> — review the four required ES2 image outputs and decide whether to prepare artwork next.</li>
+<li><strong>Review</strong> — confirm the starting choices and create the hero.</li>
+</ol>
+<p>The wizard stores its structural recommendation as guidance metadata. It does <strong>not</strong> create fake placeholder skills or lock the hero to a faction profile.</p>
+<h2 id="hero-readiness">Hero Readiness</h2>
+<p>Project Home now shows <strong>Hero Readiness</strong>, a seven-area checklist:</p>
+<ul>
+<li>Hero identity</li>
+<li>Gameplay profile</li>
+<li>Starting skills</li>
+<li>Skill progression</li>
+<li>Hero artwork</li>
+<li>Visible text / localization</li>
+<li>Release readiness</li>
+</ul>
+<p>Readiness distinguishes between:</p>
+<ul>
+<li><strong>Ready</strong> — the guided area has enough information to continue.</li>
+<li><strong>Needs attention</strong> — an important authoring area is incomplete.</li>
+<li><strong>Review</strong> — a recommendation worth checking, but not necessarily an export blocker.</li>
+</ul>
+<p>The <strong>Next</strong> button opens the most useful unfinished workspace. Release Preflight remains the authority on whether a package can be exported.</p>
+<h2 id="context-aware-recommendations">Context-aware recommendations</h2>
+<p>Project Home can surface recommendations derived from the active hero, including:</p>
+<ul>
+<li>a Starting Skill that is not represented in the Skill Tree;</li>
+<li>a Skill Tree with no Tier 1 entry point;</li>
+<li>gameplay choices that differ from the selected faction guidance profile; and</li>
+<li>skill themes associated with the selected knowledge profile.</li>
+</ul>
+<p>These recommendations are deliberately non-blocking. An unusual combination may be exactly what the mod author intends.</p>
+<h2 id="check-skill-tree-progression">Check Skill Tree progression</h2>
+<p>In Skill Tree, choose <strong>Check progression</strong>. Hero Studio explains:</p>
+<ul>
+<li>how many skills are reachable from the current entry points;</li>
+<li>whether Starting Skills are represented in the tree;</li>
+<li>higher-tier skills with no prerequisite;</li>
+<li>prerequisite links that move to the same or an earlier tier;</li>
+<li>prerequisite links that skip one or more tiers; and</li>
+<li>skills that may be unreachable from the current starting/Tier 1 path.</li>
+</ul>
+<p>Use <strong>Show skill</strong> to jump to an affected node. This is structural guidance, not a game-balance rule.</p>
+<h2 id="guided-artwork-requirements">Guided artwork requirements</h2>
+<p>Hero Asset Studio now places the required output sizes beside the source-image workflow:</p>
+<ul>
+<li>Large — 360 × 180</li>
+<li>Medium — 180 × 240</li>
+<li>Mood — 1324 × 712</li>
+<li>Mod Icon — 430 × 430</li>
+</ul>
+<p>If the source is smaller than the largest required output in either dimension, Hero Studio explains that the source will need to be enlarged for the Mood output. The app can still generate the file; the message is quality guidance rather than a blocker.</p>
+<h2 id="starter-structures">Starter structures</h2>
+<p>The Create Hero wizard includes four structural starting points:</p>
+<ul>
+<li><strong>Fleet Commander</strong></li>
+<li><strong>Governor / Administrator</strong></li>
+<li><strong>Balanced Generalist</strong></li>
+<li><strong>Advanced Blank Hero</strong></li>
+</ul>
+<p>These store recommended themes and a suggested tier shape only. The actual Skill Tree remains empty until the user selects existing ES2 skills or creates custom skills.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>4.0I keeps project schema version 7. Existing <code>.hsproj</code> files require no migration. Guided metadata is optional, and existing hero definitions, templates, ES2 catalog references, exports, recovery snapshots, and browser projects remain compatible.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

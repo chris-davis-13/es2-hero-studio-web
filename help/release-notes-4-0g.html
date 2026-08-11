@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>4.0G Release Notes — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html" aria-current="page" class="is-active">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-0-4-0-beta-7">ES2 Hero Studio 0.4.0-beta.7</h1>
+<h2 id="milestone-4-0g-es2-skill-catalog-and-guided-skill-selection">Milestone 4.0G — ES2 Skill Catalog and Guided Skill Selection</h2>
+<p>Milestone 4.0G makes existing Endless Space 2 skills discoverable inside Hero Studio. New hero authors no longer need to memorize skill names or internal XML identifiers before they can build a useful Skill Tree.</p>
+<h3 id="added">Added</h3>
+<ul>
+<li>Searchable <strong>Add Existing ES2 Skills</strong> picker with checkbox multi-selection.</li>
+<li>Desktop read-only indexing of the installed Endless Space 2 <code>Public</code> game data, including automatic installation discovery and a manual folder chooser fallback.</li>
+<li>Browser-side folder/XML selection for building the same catalog without uploading game files.</li>
+<li>Local catalog cache with refresh and clear controls.</li>
+<li>Search across names, IDs, descriptions, class/faction associations, and source skill trees.</li>
+<li>Universal, Class, Faction, and Other ES2 scope filters.</li>
+<li>Available, Assigned, and Custom ID Conflict status filters.</li>
+<li>Existing ES2 skill details with source-tree and source-file information.</li>
+<li><code>es2-native</code> reference-only skill metadata preserved in schema-v7 projects.</li>
+<li>Native-skill support in Skill Tree branch templates.</li>
+<li>Learning Center topics and glossary entries for the ES2 Skill Catalog and existing game-skill references.</li>
+<li><code>npm run test:4.0g</code> regression coverage.</li>
+</ul>
+<h3 id="changed">Changed</h3>
+<ul>
+<li>Version advanced to <code>0.4.0-beta.7</code> and milestone marker to <code>4.0G</code>.</li>
+<li>Complete beta regression suite expanded to 17 checks.</li>
+<li>Existing ES2 skills are no longer regenerated as custom <code>HeroSkillDefinition</code>, simulation-descriptor, GUI, or localization entries.</li>
+<li>Cross-file validation accepts explicitly declared existing ES2 skill references while continuing to reject unresolved custom references.</li>
+<li>Skill validation no longer warns that an existing ES2 skill has no Hero Studio-authored effects.</li>
+<li>Existing ES2 skills are read-only for game-owned IDs and effects; tier and prerequisite layout remain editable.</li>
+<li>Skill Library now separates <strong>Browse Existing ES2 Skills…</strong> from creating a custom skill.</li>
+<li>Bundled help expanded to 23 pages.</li>
+<li>Project schema remains version <code>7</code>.</li>
+</ul>
+<h3 id="still-deliberately-excluded">Still deliberately excluded</h3>
+<p>Milestone 4.0G does not add:</p>
+<ul>
+<li>multi-hero package export;</li>
+<li>installed-mod comparison;</li>
+<li>one-click mod installation; or</li>
+<li>automatic mod-version bumping.</li>
+</ul>
+<p>The validated export policy remains one hero per mod package.</p>
+<h3 id="catalog-freshness">Catalog freshness</h3>
+<p>Hero Studio intentionally indexes the user&#039;s own installed ES2 game data instead of bundling a fixed master list. Refresh the catalog after ES2 updates or changes to installed game content. Browser users should re-import the selected Public data when their game installation changes.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>User Guide — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html" aria-current="page" class="is-active">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-user-guide">ES2 Hero Studio user guide</h1>
+<h2 id="guided-creation-and-hero-readiness">Guided creation and Hero Readiness</h2>
+<p>The optional Create Hero wizard provides six short steps for first-time authors. Project Home then tracks Hero Readiness across identity, gameplay, Starting Skills, Skill Tree progression, artwork, localization, and release preparation. Choose <strong>Check progression</strong> in Skill Tree for plain-language reachability and tier guidance. Hero Asset Studio shows the exact required ES2 output sizes and warns when a source is smaller than the largest output. These are guidance features; Release Preflight remains the export authority.</p>
+<h2 id="product-purpose">Product purpose</h2>
+<p>ES2 Hero Studio creates editable hero projects and generates validated Endless Space 2 mod packages. It combines project management, image preparation, skill authoring, localization, XML review, dependency declarations, recovery, and release checks in one application.</p>
+<h2 id="project-files-and-release-files">Project files and release files</h2>
+<h3 id="hsproj"><code>.hsproj</code></h3>
+<p>The Hero Studio project file is the editable source of truth. It contains authoring metadata that cannot be represented completely in ES2 XML, including stable IDs, Skill Tree edges, guided-effect metadata, localization structure, dependency information, and release settings.</p>
+<h3 id="validated-zip">Validated ZIP</h3>
+<p>The validated ZIP is the distributable mod package. Hero Studio exports include <code>HeroStudioProjectSnapshot.json</code>, allowing another Hero Studio installation to restore editor-only information when the ZIP is reimported.</p>
+<h3 id="clean-mod-folder">Clean mod folder</h3>
+<p>The clean-folder export writes the package as a folder for local testing. Desktop exports are staged and committed transactionally to reduce partial output after a failure.</p>
+<h2 id="application-shell">Application shell</h2>
+<p>The header contains project commands, search, Problems, the searchable Learning Center, mode controls, settings, and save status. The Project Explorer organizes workspaces by Create, Review &amp; Export, Advanced, and Developer groups.</p>
+<p>Resizable layouts are stored as application preferences, not project data. Reset them through <strong>Settings → Reset panel layout</strong>.</p>
+<h2 id="hero-library">Hero Library</h2>
+<p>Use Hero Library to create, duplicate, archive, select, and remove heroes. The first public beta supports authoring multiple heroes but exports one hero per mod package.</p>
+<h2 id="hero-data">Hero Data</h2>
+<p>Hero Data contains three independently resizable sections:</p>
+<ul>
+<li>Identity &amp; Localization</li>
+<li>Gameplay Definition</li>
+<li>Workshop &amp; Package Metadata</li>
+</ul>
+<p>The workspace scrolls as sections grow. Shortened sections receive their own internal scrollbar.</p>
+<p>Gameplay Definition uses locally indexed ES2 choices instead of requiring raw identifiers for the normal workflow. Affinity, class, and politics use dropdowns; Ship Design adds search; Starting Skills uses a searchable checkbox picker that combines existing ES2 skills and custom project skills. Values from older projects or dependencies that are not in the current catalog are preserved until deliberately replaced. See <a href="guided-gameplay.html">Guided Gameplay Definition</a>.</p>
+<h2 id="asset-studio">Asset Studio</h2>
+<p>Asset Studio validates PNG dimensions, crops source artwork, and can generate required variants. Preserve original source artwork outside the project as an additional backup.</p>
+<p>Required final sizes are Large 360×180, Medium 180×240, Mood 1324×712, and Mod Icon 430×430.</p>
+<h2 id="skill-library-and-effect-builder">Skill Library and Effect Builder</h2>
+<p>Skill definitions can be reused across heroes. Guided templates create structured effects without requiring manual XML. Advanced mode exposes Expert XML for content that cannot be represented by a guided template.</p>
+<p>Use clear skill IDs and avoid changing published IDs without reviewing references and localization keys.</p>
+<h2 id="template-library">Template Library</h2>
+<p>Capture shared skills, individual effect configurations, or selected Skill Tree branches for reuse in another project. Templates are stored locally outside the <code>.hsproj</code> file and can be moved between desktop and browser installations using <code>.hstemplates</code> export and import. Hero Studio previews additions and ID conflicts before applying a template, then records the project change as one Undo command.</p>
+<h2 id="existing-es2-skill-catalog">Existing ES2 Skill Catalog</h2>
+<p>Skill Library provides two distinct authoring paths: <strong>Browse Existing ES2 Skills…</strong> for game-supplied skills and <strong>Create custom skill</strong> for new Hero Studio-authored definitions. The catalog is built from the user&#039;s own ES2 Public data, searched locally, and cached locally. Existing ES2 skills are reference-only: Hero Studio exports their IDs in the custom tree but does not recreate their game-owned effects, GUI, or localization. Their tier and prerequisite connections remain editable. See <a href="es2-skill-catalog.html">ES2 Skill Catalog and Guided Skill Selection</a>.</p>
+<h2 id="skill-tree">Skill Tree</h2>
+<p>The Skill Tree controls tiers, node positions, and prerequisites. The hero&#039;s Starting Skills are selected in Hero Data and can reference either existing ES2 skills or custom project skills. Use Project Health to detect missing skills, broken edges, and cycles.</p>
+<p>Advanced mode includes XML Preview. Its token-aware search supports separate search terms, quoted phrases, case sensitivity, whole-word matching, and match navigation.</p>
+<h2 id="localization">Localization</h2>
+<p>Localization supports multiple locales, per-entry status, fallback review, filtering, and CSV workflows. Required hero and skill strings should be complete before release.</p>
+<h2 id="dependencies">Dependencies</h2>
+<p>Advanced Dependencies distinguishes required, optional, and incompatible mods. External references can be mapped to a dependency declaration. Release Preflight reports unresolved or unavailable dependencies.</p>
+<h2 id="import-review">Import Review</h2>
+<p>Importing an existing mod ZIP is non-destructive. Hero Studio prepares a review, compares source and generated XML, reports unsupported files, and waits for <strong>Apply Reviewed Import</strong>.</p>
+<p>Applying an import is recorded as one project-wide Undo command. A pre-import project snapshot can also be restored.</p>
+<h2 id="recovery">Recovery</h2>
+<p>Hero Studio retains latest and previous autosaves. Existing project saves create rotated pre-save backups. Recovery Center can restore or delete snapshots.</p>
+<p>A recovered project is marked unsaved and should be saved under a deliberate filename before replacing any damaged source.</p>
+<h2 id="release-preflight">Release Preflight</h2>
+<p>Release Preflight combines project metadata, image validation, localization, dependencies, XML checks, previous-export comparison, file manifest generation, and release reporting.</p>
+<p>Do not distribute a package with unresolved blocking findings.</p>
+<h2 id="contextual-learning">Contextual learning</h2>
+<p>Select <strong>Learn</strong> from the header or workspace toolbar to search guidance and the terminology glossary. Field-level question-mark controls open relevant explanations, and Validation Console findings include an <strong>Explain</strong> action. Workspace tips can be dismissed individually or hidden through Settings without disabling the Learning Center.</p>
+<h2 id="search-undo-and-shortcuts">Search, Undo, and shortcuts</h2>
+<p>Use <code>Command+P</code> to open Quick Open and search. Use standard Undo/Redo shortcuts for project-wide editing history. Open the keyboard shortcut reference with the <code>?</code> control in the application header.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

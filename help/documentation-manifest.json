@@ -1,0 +1,169 @@
+{
+  "format": "es2-hero-studio-help-site",
+  "version": 1,
+  "applicationVersion": "0.4.0-beta.9",
+  "documents": [
+    {
+      "slug": "index",
+      "title": "Documentation",
+      "source": "docs/Documentation-Index.md",
+      "group": "Start"
+    },
+    {
+      "slug": "installation",
+      "title": "Install on macOS",
+      "source": "docs/Installation-macOS.md",
+      "group": "Start"
+    },
+    {
+      "slug": "browser-beta",
+      "title": "Use the Browser Beta",
+      "source": "docs/Browser-Public-Beta.md",
+      "group": "Start"
+    },
+    {
+      "slug": "getting-started",
+      "title": "Getting Started",
+      "source": "docs/Getting-Started.md",
+      "group": "Start"
+    },
+    {
+      "slug": "user-guide",
+      "title": "User Guide",
+      "source": "docs/User-Guide.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "templates-guidance",
+      "title": "Templates and Contextual Guidance",
+      "source": "docs/Templates-and-Contextual-Guidance.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "es2-skill-catalog",
+      "title": "ES2 Skill Catalog",
+      "source": "docs/ES2-Skill-Catalog.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "guided-gameplay",
+      "title": "Guided Gameplay Definition",
+      "source": "docs/Guided-Gameplay-Definition.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "guided-creation",
+      "title": "Guided Creation and Hero Readiness",
+      "source": "docs/Guided-Creation-Experience.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "modes",
+      "title": "Basic and Advanced Modes",
+      "source": "docs/Basic-and-Advanced-Modes.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "import-xml",
+      "title": "Import and XML Safety",
+      "source": "docs/Import-and-XML-Safety.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "localization-dependencies",
+      "title": "Localization and Dependencies",
+      "source": "docs/Localization-and-Dependencies.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "release-export",
+      "title": "Release and Export",
+      "source": "docs/Release-and-Export.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "keyboard-accessibility",
+      "title": "Keyboard and Accessibility",
+      "source": "docs/Keyboard-and-Accessibility.md",
+      "group": "Support"
+    },
+    {
+      "slug": "troubleshooting",
+      "title": "Troubleshooting",
+      "source": "docs/Troubleshooting.md",
+      "group": "Support"
+    },
+    {
+      "slug": "recovery",
+      "title": "Reliability and Recovery",
+      "source": "docs/Reliability-Recovery.md",
+      "group": "Support"
+    },
+    {
+      "slug": "known-limitations",
+      "title": "Known Limitations",
+      "source": "docs/Known-Limitations.md",
+      "group": "Release"
+    },
+    {
+      "slug": "privacy",
+      "title": "Privacy and Local Processing",
+      "source": "docs/Privacy-and-Local-Processing.md",
+      "group": "Release"
+    },
+    {
+      "slug": "feedback",
+      "title": "Beta Feedback",
+      "source": "docs/Beta-Feedback.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes",
+      "title": "Desktop Release Notes",
+      "source": "docs/Public-Beta-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "web-release-notes",
+      "title": "Web Release Notes",
+      "source": "docs/Web-Public-Beta-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0f",
+      "title": "4.0F Release Notes",
+      "source": "docs/4.0F-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0g",
+      "title": "4.0G Release Notes",
+      "source": "docs/4.0G-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0h",
+      "title": "4.0H Release Notes",
+      "source": "docs/4.0H-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0i",
+      "title": "4.0I Release Notes",
+      "source": "docs/4.0I-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "github-release",
+      "title": "GitHub Release Procedure",
+      "source": "docs/GitHub-Public-Beta-Release.md",
+      "group": "Maintainer"
+    },
+    {
+      "slug": "web-deployment",
+      "title": "Deploy with GitHub Pages",
+      "source": "docs/Web-Deployment-GitHub-Pages.md",
+      "group": "Maintainer"
+    }
+  ]
+}
