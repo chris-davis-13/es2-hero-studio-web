@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Artwork Requirement Guidance — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.13 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
+<a href="artwork-requirement-guidance.html" aria-current="page" class="is-active">Artwork Requirement Guidance</a>
+<a href="starter-hero-structures.html">Starter Hero Structures</a>
+<a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+<a href="release-notes-4-0j.html">4.0J Release Notes</a>
+<a href="release-notes-4-0k.html">4.0K Release Notes</a>
+<a href="release-notes-4-0l.html">4.0L Release Notes</a>
+<a href="release-notes-4-0m.html">4.0M Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="artwork-requirement-guidance">Artwork Requirement Guidance</h1>
+<p>Milestone 4.0L expands the existing Hero Asset Studio artwork check into explainable, per-output guidance. It does not add new ES2 image rules and it does not change project data.</p>
+<h2 id="required-outputs">Required outputs</h2>
+<p>Hero Studio continues to use the established four required PNG outputs:</p>
+<ul>
+<li><strong>Large Portrait</strong> — 360 × 180 PNG</li>
+<li><strong>Medium Portrait</strong> — 180 × 240 PNG</li>
+<li><strong>Mood Image</strong> — 1324 × 712 PNG</li>
+<li><strong>Mod Icon</strong> — 430 × 430 PNG</li>
+</ul>
+<h2 id="what-the-guidance-explains">What the guidance explains</h2>
+<p>For each output, <strong>Review artwork requirements</strong> shows:</p>
+<ul>
+<li>the required dimensions and PNG format;</li>
+<li>the expected package path;</li>
+<li>whether the current saved crop enlarges the source image;</li>
+<li>an approximate framing-pressure cue based on how much of the source frame remains in the tighter output dimension;</li>
+<li>whether the generated output is missing, changed, invalid, ready, or still worth reviewing; and</li>
+<li>a suggested next action such as loading a source, reviewing a crop, regenerating an output, or previewing the final PNG.</li>
+</ul>
+<h2 id="source-detail-and-crop-guidance">Source detail and crop guidance</h2>
+<p>The source-fit calculation follows the same cover-and-zoom geometry used by Asset Studio. If the current crop requires source enlargement, Hero Studio reports the approximate enlargement factor. This is a quality cue rather than an export error. A larger source or less crop zoom may preserve more source detail, but the author decides whether the result is acceptable.</p>
+<p>The framing cue estimates how much of the transformed source frame remains visible in the tighter output dimension at the current crop. A low percentage means the output is using a tighter crop and deserves a visual composition check. It does <strong>not</strong> mean the crop is invalid.</p>
+<h2 id="what-remains-authoritative">What remains authoritative</h2>
+<p>Artwork Requirement Guidance is advisory. The existing asset validator and <strong>Release Preflight</strong> remain authoritative for blocking issues such as missing required outputs, incorrect final dimensions, invalid PNG data, or outputs that no longer match the saved source/crop state.</p>
+<p>Preview guides such as Rule of Thirds, Center, Safe Area, and Eye Line remain composition aids. 4.0L does not redefine them as additional ES2 file requirements.</p>
+<h2 id="compatibility">Compatibility</h2>
+<ul>
+<li>Project schema remains version <code>7</code>.</li>
+<li>Existing source artwork, crop state, and generated image data are unchanged.</li>
+<li>The workflow remains local-first and non-destructive.</li>
+<li>Desktop and browser editions use the same derived guidance.</li>
+</ul></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

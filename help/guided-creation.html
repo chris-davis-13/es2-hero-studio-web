@@ -11,7 +11,7 @@
 <body>
   <a class="skip-link" href="#content">Skip to documentation</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.9 public beta documentation</small></span></a>
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.13 public beta documentation</small></span></a>
   </header>
   <div class="layout">
     <nav class="sidebar" aria-label="Documentation">
@@ -30,6 +30,10 @@
 <a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
 <a href="guided-gameplay.html">Guided Gameplay Definition</a>
 <a href="guided-creation.html" aria-current="page" class="is-active">Guided Creation and Hero Readiness</a>
+<a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
+<a href="artwork-requirement-guidance.html">Artwork Requirement Guidance</a>
+<a href="starter-hero-structures.html">Starter Hero Structures</a>
+<a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
 <a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
@@ -54,6 +58,10 @@
 <a href="release-notes-4-0g.html">4.0G Release Notes</a>
 <a href="release-notes-4-0h.html">4.0H Release Notes</a>
 <a href="release-notes-4-0i.html">4.0I Release Notes</a>
+<a href="release-notes-4-0j.html">4.0J Release Notes</a>
+<a href="release-notes-4-0k.html">4.0K Release Notes</a>
+<a href="release-notes-4-0l.html">4.0L Release Notes</a>
+<a href="release-notes-4-0m.html">4.0M Release Notes</a>
     </section>
 
     <section>
@@ -120,7 +128,7 @@
 <li>Mood — 1324 × 712</li>
 <li>Mod Icon — 430 × 430</li>
 </ul>
-<p>If the source is smaller than the largest required output in either dimension, Hero Studio explains that the source will need to be enlarged for the Mood output. The app can still generate the file; the message is quality guidance rather than a blocker.</p>
+<p>Milestone 4.0L expands this into <strong>Artwork Requirement Guidance</strong>. Choose <strong>Review artwork requirements</strong> to see the required package path, current-crop source enlargement, approximate framing pressure, output status, and a suggested next action for each of the four outputs. These cues are advisory; the existing asset validator and Release Preflight remain authoritative for blocking export issues.</p>
 <h2 id="starter-structures">Starter structures</h2>
 <p>The Create Hero wizard includes four structural starting points:</p>
 <ul>
@@ -129,9 +137,15 @@
 <li><strong>Balanced Generalist</strong></li>
 <li><strong>Advanced Blank Hero</strong></li>
 </ul>
-<p>These store recommended themes and a suggested tier shape only. The actual Skill Tree remains empty until the user selects existing ES2 skills or creates custom skills.</p>
+<p>These still create no fake Skill Tree nodes or prerequisites. Milestone 4.0M adds a guidance-only preview to Step 4 and makes the selected structure available later from <strong>Skill Tree → Starter structure</strong>. There you can compare the framework with real skills already in the tree, review author decisions, and safely switch structures. Switching changes optional guidance metadata only; the actual Skill Tree, Starting Skills, gameplay fields, definitions, and effects remain untouched. See <a href="starter-hero-structures.html">Starter Hero Structures</a>.</p>
 <h2 id="compatibility">Compatibility</h2>
-<p>4.0I keeps project schema version 7. Existing <code>.hsproj</code> files require no migration. Guided metadata is optional, and existing hero definitions, templates, ES2 catalog references, exports, recovery snapshots, and browser projects remain compatible.</p></article><footer>ES2 Hero Studio 0.4.0-beta.9 · Desktop and web beta · Project schema 7</footer></main>
+<p>4.0I keeps project schema version 7. Existing <code>.hsproj</code> files require no migration. Guided metadata is optional, and existing hero definitions, templates, ES2 catalog references, exports, recovery snapshots, and browser projects remain compatible.</p>
+<h2 id="4-0j-relationship-aware-recommendations">4.0J — Relationship-Aware Recommendations</h2>
+<p>4.0J extends the 4.0I Hero Readiness experience with active-hero relationship guidance. It compares existing metadata, direct skills, Skill Tree evidence, configured effects, and gameplay contexts, then surfaces advisory connections and tensions without modifying the project or claiming authoritative balance. The existing 4.0I Hero Wizard remains unchanged.</p>
+<h2 id="4-0k-skill-tree-progression-guidance">4.0K — Skill Tree Progression Guidance</h2>
+<p>4.0K deepens the existing <strong>Check progression</strong> workflow instead of adding a second checker. The panel now explains entry branches, shortest prerequisite routes, shared gateway skills, terminal endpoints, disconnected progression islands, Starting Skill coverage, and the earlier tier/reachability findings in one place. <strong>Explain a skill path</strong> answers “How do I reach this?” for any node without changing the tree. Gateway and endpoint summaries describe structure rather than balance; unusual trees remain allowed.</p>
+<h2 id="4-0m-starter-hero-structures">4.0M — Starter Hero Structures</h2>
+<p>4.0M turns the previously stored starter-profile choice into persistent Skill Tree guidance. The new panel compares a selected framework with the real tree and recommends the next structural decision without modifying project content.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

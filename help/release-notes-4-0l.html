@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Localization and Dependencies — ES2 Hero Studio</title>
+  <title>4.0L Release Notes — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -36,7 +36,7 @@
 <a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
 <a href="import-xml.html">Import and XML Safety</a>
-<a href="localization-dependencies.html" aria-current="page" class="is-active">Localization and Dependencies</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
     </section>
 
@@ -60,7 +60,7 @@
 <a href="release-notes-4-0i.html">4.0I Release Notes</a>
 <a href="release-notes-4-0j.html">4.0J Release Notes</a>
 <a href="release-notes-4-0k.html">4.0K Release Notes</a>
-<a href="release-notes-4-0l.html">4.0L Release Notes</a>
+<a href="release-notes-4-0l.html" aria-current="page" class="is-active">4.0L Release Notes</a>
 <a href="release-notes-4-0m.html">4.0M Release Notes</a>
     </section>
 
@@ -69,32 +69,25 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="localization-and-dependencies">Localization and dependencies</h1>
-<h2 id="localization-workflow">Localization workflow</h2>
-<p>English is the default locale. Hero Studio builds localization targets for hero names, descriptions, skills, and custom keys.</p>
-<p>For each additional locale:</p>
-<ol>
-<li>Add the locale.</li>
-<li>Filter to missing or changed entries.</li>
-<li>Enter translations.</li>
-<li>Review fallback values.</li>
-<li>Resolve duplicate or invalid keys.</li>
-<li>Re-run Project Health and Release Preflight.</li>
-</ol>
-<p>CSV import/export can support external translation work. Review imported changes before release.</p>
-<h2 id="fallback-behaviour">Fallback behaviour</h2>
-<p>An untranslated value may fall back to the default locale during authoring. Fallback does not necessarily mean the release is complete. Release Preflight reports missing required localized content according to the project state.</p>
-<h2 id="dependency-categories">Dependency categories</h2>
-<h3 id="required">Required</h3>
-<p>The mod cannot operate as intended without this dependency.</p>
-<h3 id="optional">Optional</h3>
-<p>The mod can use or integrate with the dependency, but remains usable without it.</p>
-<h3 id="incompatible">Incompatible</h3>
-<p>The mod should not be used with the named dependency or version range.</p>
-<h2 id="external-references">External references</h2>
-<p>Map external XML references to a declared dependency. This allows Hero Studio to distinguish an intentional external reference from an unresolved project reference.</p>
-<h2 id="availability-enforcement">Availability enforcement</h2>
-<p>The known-mod catalog can record active and inactive dependencies. Availability checks are authoring aids; users must still install the actual required mod in Endless Space 2.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="4-0l-release-notes-artwork-requirement-guidance">4.0L Release Notes — Artwork Requirement Guidance</h1>
+<p>Version: <code>0.4.0-beta.12</code> Milestone: <code>4.0L</code> Project schema: <code>7</code></p>
+<h2 id="added">Added</h2>
+<ul>
+<li>Expanded the existing Hero Asset Studio guided artwork check into per-output Artwork Requirement Guidance.</li>
+<li>Added source-fit analysis using the current saved crop and the same cover/zoom geometry as Asset Studio.</li>
+<li>Added approximate source-enlargement and framing-pressure explanations for Large, Medium, Mood, and Mod Icon outputs.</li>
+<li>Added per-output package paths, status explanations, and actionable next-step guidance.</li>
+<li>Added a <strong>Review artwork requirements</strong> detail panel with direct navigation back to each crop editor.</li>
+<li>Added Learning Center and bundled documentation coverage for the new artwork guidance.</li>
+</ul>
+<h2 id="preserved">Preserved</h2>
+<ul>
+<li>The four established output specifications: Large 360×180, Medium 180×240, Mood 1324×712, and Mod Icon 430×430 PNG.</li>
+<li>Existing Asset Studio crop/generation behavior.</li>
+<li>Existing validation and Release Preflight authority.</li>
+<li>Project schema 7 and the one-hero beta export policy.</li>
+<li>Advisory, non-blocking guidance: 4.0L does not judge artistic quality or automatically alter source artwork, crops, or generated assets.</li>
+</ul></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

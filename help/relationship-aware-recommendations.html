@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Localization and Dependencies — ES2 Hero Studio</title>
+  <title>Relationship-Aware Recommendations — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -33,10 +33,10 @@
 <a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
 <a href="artwork-requirement-guidance.html">Artwork Requirement Guidance</a>
 <a href="starter-hero-structures.html">Starter Hero Structures</a>
-<a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
+<a href="relationship-aware-recommendations.html" aria-current="page" class="is-active">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
 <a href="import-xml.html">Import and XML Safety</a>
-<a href="localization-dependencies.html" aria-current="page" class="is-active">Localization and Dependencies</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
     </section>
 
@@ -69,32 +69,23 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="localization-and-dependencies">Localization and dependencies</h1>
-<h2 id="localization-workflow">Localization workflow</h2>
-<p>English is the default locale. Hero Studio builds localization targets for hero names, descriptions, skills, and custom keys.</p>
-<p>For each additional locale:</p>
-<ol>
-<li>Add the locale.</li>
-<li>Filter to missing or changed entries.</li>
-<li>Enter translations.</li>
-<li>Review fallback values.</li>
-<li>Resolve duplicate or invalid keys.</li>
-<li>Re-run Project Health and Release Preflight.</li>
-</ol>
-<p>CSV import/export can support external translation work. Review imported changes before release.</p>
-<h2 id="fallback-behaviour">Fallback behaviour</h2>
-<p>An untranslated value may fall back to the default locale during authoring. Fallback does not necessarily mean the release is complete. Release Preflight reports missing required localized content according to the project state.</p>
-<h2 id="dependency-categories">Dependency categories</h2>
-<h3 id="required">Required</h3>
-<p>The mod cannot operate as intended without this dependency.</p>
-<h3 id="optional">Optional</h3>
-<p>The mod can use or integrate with the dependency, but remains usable without it.</p>
-<h3 id="incompatible">Incompatible</h3>
-<p>The mod should not be used with the named dependency or version range.</p>
-<h2 id="external-references">External references</h2>
-<p>Map external XML references to a declared dependency. This allows Hero Studio to distinguish an intentional external reference from an unresolved project reference.</p>
-<h2 id="availability-enforcement">Availability enforcement</h2>
-<p>The known-mod catalog can record active and inactive dependencies. Availability checks are authoring aids; users must still install the actual required mod in Endless Space 2.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="relationship-aware-recommendations">Relationship-Aware Recommendations</h1>
+<p>Milestone 4.0J adds the <strong>Relationship Advisor</strong> to ES2 Hero Studio.</p>
+<p>The advisor examines the active hero as a connected design rather than a collection of independent fields. It uses information already present in the project and highlights relationships worth reviewing.</p>
+<h2 id="where-it-appears">Where it appears</h2>
+<p>The compact <strong>Relationship Advisor</strong> bar appears below the normal Workspace Toolbar in hero-authoring workspaces. Select <strong>Review relationships</strong> for the full recommendation view.</p>
+<h2 id="what-it-can-compare">What it can compare</h2>
+<p>When those values are available, the advisor can consider Class, Affinity, Politics, Ship Design, direct skill references, Skill Tree nodes/categories, configured skill effects, ship/fleet versus system/colony effect contexts, and Level Up Rule references.</p>
+<h2 id="evidence-not-prescriptions">Evidence, not prescriptions</h2>
+<p>Every recommendation is based on project evidence. The advisor may report, for example, that both ship/fleet and system/colony effect contexts are present, or that a hero combines direct skills with a Skill Tree.</p>
+<p>Those observations are not balance judgments. Hero Studio does not automatically change any field and does not claim that one Class, Affinity, Politics value, Ship Design, or skill combination is universally correct.</p>
+<h2 id="priorities">Priorities</h2>
+<p><strong>Review</strong> — missing information limits relationship analysis.</p>
+<p><strong>Consider</strong> — a relationship or tension is worth comparing with the intended hero concept.</p>
+<p><strong>Context</strong> — supporting information helps explain the current design.</p>
+<h2 id="navigation-and-boundaries">Navigation and boundaries</h2>
+<p>Recommendations can link to existing Hero Data, Skill Tree, Skill Library, or Hero Library workspaces using Hero Studio&#039;s existing workspace-selection system.</p>
+<p>The Relationship Advisor does not replace Project Health, the Validation Console, or Release Preflight. It also does not perform detailed Skill Tree progression coaching; that remains a separate future feature area.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

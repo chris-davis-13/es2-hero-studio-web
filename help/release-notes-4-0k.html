@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Localization and Dependencies — ES2 Hero Studio</title>
+  <title>4.0K Release Notes — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -36,7 +36,7 @@
 <a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
 <a href="import-xml.html">Import and XML Safety</a>
-<a href="localization-dependencies.html" aria-current="page" class="is-active">Localization and Dependencies</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
     </section>
 
@@ -59,7 +59,7 @@
 <a href="release-notes-4-0h.html">4.0H Release Notes</a>
 <a href="release-notes-4-0i.html">4.0I Release Notes</a>
 <a href="release-notes-4-0j.html">4.0J Release Notes</a>
-<a href="release-notes-4-0k.html">4.0K Release Notes</a>
+<a href="release-notes-4-0k.html" aria-current="page" class="is-active">4.0K Release Notes</a>
 <a href="release-notes-4-0l.html">4.0L Release Notes</a>
 <a href="release-notes-4-0m.html">4.0M Release Notes</a>
     </section>
@@ -69,32 +69,37 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="localization-and-dependencies">Localization and dependencies</h1>
-<h2 id="localization-workflow">Localization workflow</h2>
-<p>English is the default locale. Hero Studio builds localization targets for hero names, descriptions, skills, and custom keys.</p>
-<p>For each additional locale:</p>
-<ol>
-<li>Add the locale.</li>
-<li>Filter to missing or changed entries.</li>
-<li>Enter translations.</li>
-<li>Review fallback values.</li>
-<li>Resolve duplicate or invalid keys.</li>
-<li>Re-run Project Health and Release Preflight.</li>
-</ol>
-<p>CSV import/export can support external translation work. Review imported changes before release.</p>
-<h2 id="fallback-behaviour">Fallback behaviour</h2>
-<p>An untranslated value may fall back to the default locale during authoring. Fallback does not necessarily mean the release is complete. Release Preflight reports missing required localized content according to the project state.</p>
-<h2 id="dependency-categories">Dependency categories</h2>
-<h3 id="required">Required</h3>
-<p>The mod cannot operate as intended without this dependency.</p>
-<h3 id="optional">Optional</h3>
-<p>The mod can use or integrate with the dependency, but remains usable without it.</p>
-<h3 id="incompatible">Incompatible</h3>
-<p>The mod should not be used with the named dependency or version range.</p>
-<h2 id="external-references">External references</h2>
-<p>Map external XML references to a declared dependency. This allows Hero Studio to distinguish an intentional external reference from an unresolved project reference.</p>
-<h2 id="availability-enforcement">Availability enforcement</h2>
-<p>The known-mod catalog can record active and inactive dependencies. Availability checks are authoring aids; users must still install the actual required mod in Endless Space 2.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-4-0k-release-notes">ES2 Hero Studio 4.0K Release Notes</h1>
+<h2 id="release-identity">Release identity</h2>
+<ul>
+<li>Version: <code>0.4.0-beta.11</code></li>
+<li>Milestone: <code>4.0K</code></li>
+<li>Feature: Skill Tree Progression Guidance</li>
+<li>Project schema: <code>7</code></li>
+</ul>
+<h2 id="added">Added</h2>
+<ul>
+<li>Expanded the existing <strong>Check progression</strong> panel instead of introducing a second progression tool.</li>
+<li>Added six progression metrics: reachable skills, entry branches, path depth, gateway skills, endpoints, and review findings.</li>
+<li>Added <strong>Explain a skill path</strong> for a shortest prerequisite route from current Starting Skill or Tier 1 entry points.</li>
+<li>Added branch summaries with downstream skill count and maximum branch depth.</li>
+<li>Added shared gateway detection for non-entry skills that all current paths to multiple later skills pass through.</li>
+<li>Added terminal endpoint summaries.</li>
+<li>Added disconnected-island grouping for unreachable connected sections of the tree.</li>
+<li>Added richer Learning Center guidance and dedicated bundled documentation.</li>
+</ul>
+<h2 id="preserved">Preserved</h2>
+<ul>
+<li>Existing 4.0I reachability, Starting Skill, higher-tier-root, tier-direction, and tier-gap guidance.</li>
+<li>Existing 4.0I Create Hero wizard.</li>
+<li>Existing 4.0J Relationship-Aware Recommendations.</li>
+<li>Existing Skill Tree validation and Release Preflight authority.</li>
+<li>Existing project schema version 7 and one-hero export policy.</li>
+</ul>
+<h2 id="guidance-policy">Guidance policy</h2>
+<p>Skill Tree Progression Guidance is advisory. It describes graph structure and routes without claiming that a Skill Tree is best, correct, optimal, or balanced. It never changes the project automatically.</p>
+<h2 id="packaging">Packaging</h2>
+<p>The 4.0K guide and release notes are registered in the central Help catalog and included in both desktop and browser beta documentation bundles. The desktop documentation list also carries forward the 4.0J relationship guidance that was already present in browser packaging.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

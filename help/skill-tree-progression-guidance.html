@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Skill Tree Progression Guidance — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.13 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="skill-tree-progression-guidance.html" aria-current="page" class="is-active">Skill Tree Progression Guidance</a>
+<a href="artwork-requirement-guidance.html">Artwork Requirement Guidance</a>
+<a href="starter-hero-structures.html">Starter Hero Structures</a>
+<a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+<a href="release-notes-4-0j.html">4.0J Release Notes</a>
+<a href="release-notes-4-0k.html">4.0K Release Notes</a>
+<a href="release-notes-4-0l.html">4.0L Release Notes</a>
+<a href="release-notes-4-0m.html">4.0M Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="skill-tree-progression-guidance">Skill Tree Progression Guidance</h1>
+<p>Milestone 4.0K expands the existing <strong>Check progression</strong> workflow into an explainable view of how a hero moves through the current Skill Tree. It is structural guidance for authors. It does not rewrite the tree, enforce a preferred build, or decide whether a hero is balanced.</p>
+<h2 id="what-the-guidance-answers">What the guidance answers</h2>
+<p>Open <strong>Skill Tree → Check progression</strong> to review six structural questions:</p>
+<ol>
+<li><strong>Can the current entry points reach the tree?</strong> Hero Studio uses represented Starting Skills when available. If none are represented, it falls back to Tier 1 skills and then structural roots.</li>
+<li><strong>What are the major entry branches?</strong> Each entry point is summarized with the number of skills downstream and the longest path depth within that branch.</li>
+<li><strong>How do I reach a specific skill?</strong> Choose any skill under <strong>Explain a skill path</strong> to see a shortest prerequisite route from the current entry points.</li>
+<li><strong>Which skills act as gateways?</strong> A gateway is a reachable non-entry skill that appears on every available route to at least two later reachable skills. This highlights structural bottlenecks; it does not mean the gateway is good or bad design.</li>
+<li><strong>Where do paths end?</strong> Endpoint skills have no outgoing unlocks. Endpoints can be deliberate capstones, side-grade endings, or incomplete branches.</li>
+<li><strong>Are any groups disconnected?</strong> A disconnected island is a connected group of skills that cannot currently be reached from the chosen entry paths.</li>
+</ol>
+<h2 id="progression-summary">Progression summary</h2>
+<p>The top of the panel shows:</p>
+<ul>
+<li><strong>Reachable</strong> — skills reachable from current entry points.</li>
+<li><strong>Entry branches</strong> — the entry points used for this analysis.</li>
+<li><strong>Path depth</strong> — the longest shortest route from an entry point to a reachable skill.</li>
+<li><strong>Gateways</strong> — shared dependency points for multiple later skills.</li>
+<li><strong>Endpoints</strong> — skills with no outgoing prerequisite links.</li>
+<li><strong>Review</strong> — findings currently marked for attention.</li>
+</ul>
+<p>These values describe the current graph. They are not validation scores.</p>
+<h2 id="starting-skill-coverage">Starting Skill coverage</h2>
+<p>When the hero has configured Starting Skills, Hero Studio checks whether those skill IDs are represented as Skill Tree nodes. Represented Starting Skills become the preferred entry points for reachability analysis.</p>
+<p>A Starting Skill that is not in the Skill Tree is reported as <strong>Consider</strong>, not an error. Some mods intentionally grant a Starting Skill outside the visible progression tree.</p>
+<p>If no configured Starting Skill is represented, the checker uses Tier 1 nodes as the guided entry points. If no Tier 1 node exists either, structural roots are used so the author can still inspect the tree.</p>
+<h2 id="explain-a-skill-path">Explain a skill path</h2>
+<p>Choose a skill from <strong>Explain a skill path</strong>. For a reachable skill, Hero Studio shows a shortest prerequisite route such as:</p>
+<p><code>Starting Skill → Branch Skill → Specialization → Capstone</code></p>
+<p>Each step is selectable so you can jump to that node in the existing Skill Tree editor.</p>
+<p>If the selected skill is not reachable, the panel explains that no current prerequisite route reaches it from the chosen entry points. Review its incoming prerequisites, whether it belongs to an alternate entry branch, or whether the separation is intentional.</p>
+<p>Shortest-route guidance is descriptive. A tree may contain several valid routes to the same skill; the panel shows one shortest route for clarity.</p>
+<h2 id="entry-branches">Entry branches</h2>
+<p>Each entry branch starts at one of the analysis entry points. The branch summary reports:</p>
+<ul>
+<li>the entry skill;</li>
+<li>the number of skills reachable downstream from that entry; and</li>
+<li>the branch&#039;s maximum path depth.</li>
+</ul>
+<p>Branches can overlap when separate prerequisite paths later merge. An overlap is not treated as a problem.</p>
+<h2 id="gateway-skills">Gateway skills</h2>
+<p>A gateway skill is a reachable non-entry node that structurally dominates at least two later reachable skills: every currently available route to those later skills passes through that node.</p>
+<p>Gateways are useful review points because changing or removing one prerequisite can affect a large portion of a branch. The guidance does <strong>not</strong> claim that a gateway is too strong, too weak, mandatory in gameplay, or incorrectly balanced.</p>
+<h2 id="endpoints">Endpoints</h2>
+<p>Endpoint skills have no outgoing prerequisite connections. The panel lists their tier and whether each endpoint is reachable from the current entry paths.</p>
+<p>A terminal skill can be a deliberate capstone. Hero Studio does not flag endpoints simply for being endpoints.</p>
+<h2 id="disconnected-islands">Disconnected islands</h2>
+<p>The checker groups unreachable nodes by undirected structural connection. A multi-skill group outside all current entry paths is described as a <strong>Disconnected progression island</strong>.</p>
+<p>This can indicate:</p>
+<ul>
+<li>an intended alternate progression route;</li>
+<li>a branch whose entry prerequisite has not been connected yet;</li>
+<li>a Starting Skill that exists outside the current tree; or</li>
+<li>an accidental separation.</li>
+</ul>
+<p>The finding remains advisory.</p>
+<h2 id="tier-and-reachability-findings">Tier and reachability findings</h2>
+<p>4.0K preserves the earlier 4.0I progression findings:</p>
+<ul>
+<li>no Tier 1 entry point;</li>
+<li>represented or missing Starting Skills;</li>
+<li>skill may be unreachable;</li>
+<li>higher-tier skill with no prerequisite;</li>
+<li>prerequisite that stays in or moves backward to an earlier tier; and</li>
+<li>prerequisite that skips one or more tiers.</li>
+</ul>
+<p>These findings use <strong>Review</strong>, <strong>Consider</strong>, or <strong>Context</strong> language. They do not block export.</p>
+<h2 id="relationship-to-validation-and-release-preflight">Relationship to validation and Release Preflight</h2>
+<p>Skill Tree Progression Guidance is not a replacement for Hero Studio validation. Existing validation remains responsible for structural correctness such as circular dependencies and invalid references. Release Preflight remains the final export authority.</p>
+<p>Progression guidance answers a different question: <strong>Does the intended path through this valid structure make sense to the author?</strong></p>
+<h2 id="non-destructive-design">Non-destructive design</h2>
+<p>The progression engine reads the current Skill Tree, Starting Skills, tiers, and prerequisite edges. It does not call project update APIs and does not add, remove, reconnect, reorder, or retier skills.</p>
+<p>Selecting <strong>Show skill</strong> or a path step only navigates to an existing node.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>Milestone 4.0K uses project schema version 7. Existing <code>.hsproj</code> projects do not require migration. The existing 4.0I Hero Wizard, 4.0J Relationship Advisor, templates, ES2 catalog references, browser recovery, desktop recovery, and one-hero export policy remain unchanged.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

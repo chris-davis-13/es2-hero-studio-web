@@ -1,7 +1,7 @@
 {
   "format": "es2-hero-studio-help-site",
   "version": 1,
-  "applicationVersion": "0.4.0-beta.9",
+  "applicationVersion": "0.4.0-beta.13",
   "documents": [
     {
       "slug": "index",
@@ -55,6 +55,30 @@
       "slug": "guided-creation",
       "title": "Guided Creation and Hero Readiness",
       "source": "docs/Guided-Creation-Experience.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "skill-tree-progression-guidance",
+      "title": "Skill Tree Progression Guidance",
+      "source": "docs/Skill-Tree-Progression-Guidance.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "artwork-requirement-guidance",
+      "title": "Artwork Requirement Guidance",
+      "source": "docs/Artwork-Requirement-Guidance.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "starter-hero-structures",
+      "title": "Starter Hero Structures",
+      "source": "docs/Starter-Hero-Structures.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "relationship-aware-recommendations",
+      "title": "Relationship-Aware Recommendations",
+      "source": "docs/Relationship-Aware-Recommendations.md",
       "group": "Authoring"
     },
     {
@@ -151,6 +175,30 @@
       "slug": "release-notes-4-0i",
       "title": "4.0I Release Notes",
       "source": "docs/4.0I-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0j",
+      "title": "4.0J Release Notes",
+      "source": "docs/4.0J-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0k",
+      "title": "4.0K Release Notes",
+      "source": "docs/4.0K-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0l",
+      "title": "4.0L Release Notes",
+      "source": "docs/4.0L-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0m",
+      "title": "4.0M Release Notes",
+      "source": "docs/4.0M-Release-Notes.md",
       "group": "Release"
     },
     {

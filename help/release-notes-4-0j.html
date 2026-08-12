@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Localization and Dependencies — ES2 Hero Studio</title>
+  <title>4.0J Release Notes — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -36,7 +36,7 @@
 <a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
 <a href="import-xml.html">Import and XML Safety</a>
-<a href="localization-dependencies.html" aria-current="page" class="is-active">Localization and Dependencies</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
     </section>
 
@@ -58,7 +58,7 @@
 <a href="release-notes-4-0g.html">4.0G Release Notes</a>
 <a href="release-notes-4-0h.html">4.0H Release Notes</a>
 <a href="release-notes-4-0i.html">4.0I Release Notes</a>
-<a href="release-notes-4-0j.html">4.0J Release Notes</a>
+<a href="release-notes-4-0j.html" aria-current="page" class="is-active">4.0J Release Notes</a>
 <a href="release-notes-4-0k.html">4.0K Release Notes</a>
 <a href="release-notes-4-0l.html">4.0L Release Notes</a>
 <a href="release-notes-4-0m.html">4.0M Release Notes</a>
@@ -69,32 +69,26 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="localization-and-dependencies">Localization and dependencies</h1>
-<h2 id="localization-workflow">Localization workflow</h2>
-<p>English is the default locale. Hero Studio builds localization targets for hero names, descriptions, skills, and custom keys.</p>
-<p>For each additional locale:</p>
-<ol>
-<li>Add the locale.</li>
-<li>Filter to missing or changed entries.</li>
-<li>Enter translations.</li>
-<li>Review fallback values.</li>
-<li>Resolve duplicate or invalid keys.</li>
-<li>Re-run Project Health and Release Preflight.</li>
-</ol>
-<p>CSV import/export can support external translation work. Review imported changes before release.</p>
-<h2 id="fallback-behaviour">Fallback behaviour</h2>
-<p>An untranslated value may fall back to the default locale during authoring. Fallback does not necessarily mean the release is complete. Release Preflight reports missing required localized content according to the project state.</p>
-<h2 id="dependency-categories">Dependency categories</h2>
-<h3 id="required">Required</h3>
-<p>The mod cannot operate as intended without this dependency.</p>
-<h3 id="optional">Optional</h3>
-<p>The mod can use or integrate with the dependency, but remains usable without it.</p>
-<h3 id="incompatible">Incompatible</h3>
-<p>The mod should not be used with the named dependency or version range.</p>
-<h2 id="external-references">External references</h2>
-<p>Map external XML references to a declared dependency. This allows Hero Studio to distinguish an intentional external reference from an unresolved project reference.</p>
-<h2 id="availability-enforcement">Availability enforcement</h2>
-<p>The known-mod catalog can record active and inactive dependencies. Availability checks are authoring aids; users must still install the actual required mod in Endless Space 2.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-4-0j-release-notes">ES2 Hero Studio 4.0J Release Notes</h1>
+<p><strong>Version:</strong> <code>0.4.0-beta.10</code> <strong>Milestone:</strong> 4.0J — Relationship-Aware Recommendations <strong>Project schema:</strong> unchanged from 4.0I</p>
+<h2 id="purpose">Purpose</h2>
+<p>4.0J extends the guided-creation and Hero Readiness foundation from 4.0I by helping authors understand how the active hero&#039;s existing choices relate to one another.</p>
+<p>The milestone does <strong>not</strong> add another Hero Wizard. The existing 4.0I wizard remains the creation pathway.</p>
+<h2 id="included">Included</h2>
+<ul>
+<li>Relationship Advisor integrated immediately below the existing Workspace Toolbar in hero-authoring workspaces.</li>
+<li>Active-hero snapshot covering Class, Affinity, Politics, Ship Design, direct skill references, Skill Tree evidence, configured effects, and Level Up Rule when available.</li>
+<li>Advisory relationship checks for missing core relationship anchors, Class ↔ Ship Design, Affinity ↔ Politics, metadata ↔ gameplay evidence, direct skills ↔ Skill Tree, gameplay-theme signals, mixed ship/system contexts, broad Skill Tree category mixes, and Level Up Rule context.</li>
+<li>Evidence chips showing what project data produced each recommendation.</li>
+<li>One-click navigation to existing Hero Studio workspaces.</li>
+<li>No automatic project changes.</li>
+<li>No project-schema migration.</li>
+</ul>
+<h2 id="design-boundary">Design boundary</h2>
+<p>Relationship recommendations are authoring guidance, not validation or game-balance authority. The advisor derives signals from current project fields, names, Skill Tree categories, effect targets, and effect paths. It does not declare a Class, Affinity, Politics value, Ship Design, skill, or effect combination to be the &quot;best&quot; or &quot;correct&quot; choice.</p>
+<p>Detailed Skill Tree progression guidance remains outside 4.0J and can be addressed as a later milestone.</p>
+<h2 id="regression-coverage">Regression coverage</h2>
+<p>Run <code>npm run test:4.0j</code>.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>
