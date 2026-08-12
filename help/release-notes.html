@@ -69,46 +69,70 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-0-4-0-beta-4">ES2 Hero Studio 0.4.0-beta.4</h1>
-<h2 id="public-desktop-beta">Public desktop beta</h2>
-<p>This release is the first documented public macOS beta of ES2 Hero Studio. It combines the complete hero-authoring workflow with release validation, lossless Hero Studio reimport, recovery safeguards, production packaging, and official application branding.</p>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-0-4-0-beta-13">ES2 Hero Studio 0.4.0-beta.13</h1>
+<h2 id="public-desktop-and-browser-beta">Public desktop and browser beta</h2>
+<p>ES2 Hero Studio is a dedicated authoring environment for creating and maintaining Endless Space 2 hero mods. Beta.13 completes the planned 4.0 guided-authoring sequence while preserving the existing schema-v7 project format and non-destructive authoring model.</p>
+<p>The beta is available as an unsigned Apple Silicon macOS application and as a browser edition designed for static HTTPS hosting, offline-capable use, and local project processing.</p>
 <h2 id="highlights">Highlights</h2>
 <ul>
 <li>Guided Basic mode and technical Advanced mode</li>
-<li>Hero Library and resizable Hero Data sections</li>
-<li>Asset Studio for all four required PNG formats</li>
+<li>Hero Library with artwork thumbnails and resizable Hero Data sections</li>
+<li>Asset Studio for all four required PNG outputs</li>
+<li>Advisory artwork requirement and source-fit guidance</li>
 <li>Shared Skill Library and guided effect templates</li>
-<li>Visual Skill Tree with prerequisites and starting skills</li>
+<li>Visual Skill Tree with prerequisites, Starting Skills, and progression analysis</li>
+<li>Relationship-aware authoring recommendations</li>
+<li>Starter Hero Structures for Fleet Commander, Governor / Administrator, Balanced Generalist, and Advanced Blank Hero</li>
+<li>Guidance-only starter structures that never create skills, prerequisites, effects, or gameplay values automatically</li>
+<li>Guided Create Hero workflow with Hero Readiness recommendations</li>
+<li>ES2 Skill Catalog with searchable guided selection of existing game skills</li>
+<li>Guided gameplay selectors for affinity, class, politics, ship design, and Starting Skills</li>
+<li>Reusable skill, effect, and selected-branch templates</li>
+<li>Searchable Learning Center, contextual guidance, and glossary</li>
 <li>Multi-locale authoring and fallback review</li>
 <li>Dependency declarations and external-reference mapping</li>
 <li>Non-destructive ZIP import review and semantic XML comparison</li>
 <li>Project Health, Validation Console, and Release Preflight</li>
 <li>Validated ZIP and transactional clean-folder export</li>
-<li>Embedded <code>HeroStudioProjectSnapshot.json</code> for lossless reimport</li>
+<li>Embedded <code>HeroStudioProjectSnapshot.json</code> for lossless Hero Studio reimport</li>
 <li>Atomic desktop saves and rotated pre-save backups</li>
 <li>Latest/previous autosave Recovery Center</li>
 <li>Save/Discard/Cancel protection on application close</li>
-<li>Production Electron build without a Vite server</li>
-<li>Official ES2 Hero Studio icon and public documentation set</li>
+<li>Production Electron build without a Vite development server</li>
+<li>Official ES2 Hero Studio branding and bundled documentation</li>
+<li>Browser public beta with IndexedDB persistence, recovery history, local file workflows, installable PWA support, and offline application shell</li>
+</ul>
+<h2 id="beta-13-guided-authoring-additions">Beta.13 guided-authoring additions</h2>
+<p>Milestones 4.0J through 4.0M complete the guided-authoring sequence introduced earlier in the public beta:</p>
+<ul>
+<li><strong>4.0J — Relationship-Aware Recommendations:</strong> contextual guidance based on the active hero, skills, and related authoring data.</li>
+<li><strong>4.0K — Skill Tree Progression Guidance:</strong> explainable paths, progression islands, gateways, Starting Skill coverage, and structural review.</li>
+<li><strong>4.0L — Artwork Requirement Guidance:</strong> per-output source-fit, crop, enlargement, framing, and next-action guidance without making artistic-quality judgments.</li>
+<li><strong>4.0M — Starter Hero Structures:</strong> persistent, explainable Skill Tree frameworks that compare guidance with the creator&#039;s real tree while remaining fully non-destructive.</li>
 </ul>
 <h2 id="release-identity">Release identity</h2>
 <ul>
-<li>Version: <code>0.4.0-beta.4</code></li>
-<li>Milestone: <code>4.0D</code></li>
+<li>Version: <code>0.4.0-beta.13</code></li>
+<li>Milestone: <code>4.0M</code></li>
 <li>Project schema: <code>7</code></li>
 <li>Application identifier: <code>com.chrisdavis.es2herostudio</code></li>
-<li>Primary package: unsigned Apple Silicon DMG and ZIP</li>
+<li>Desktop package: unsigned Apple Silicon DMG and ZIP</li>
+<li>Browser package: static HTTPS web application with local-first project storage</li>
 </ul>
+<p>Existing schema-v7 beta projects remain compatible with beta.13.</p>
 <h2 id="important-limitations">Important limitations</h2>
 <ul>
 <li>one hero per exported mod package;</li>
 <li>unsigned macOS beta;</li>
 <li>no direct Steam Workshop upload;</li>
-<li>no public browser edition yet;</li>
-<li>no native Windows package; and</li>
-<li>automatic image detection requires network access for MediaPipe resources.</li>
+<li>no native Windows package at this time;</li>
+<li>browser security prevents direct installed-game scanning, so browser game-data acquisition uses user-selected local files; and</li>
+<li>Starter Hero Structures and other guided systems provide recommendations rather than automatically making authoring or balance decisions.</li>
 </ul>
-<p>Read <code>Known-Limitations.md</code> before distributing projects or release packages.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
+<p>Read <code>Known-Limitations.md</code> before distributing projects or release packages.</p>
+<h2 id="browser-edition">Browser edition</h2>
+<p>The browser edition is now publicly available alongside the desktop beta. It keeps project processing local to the browser, supports persistent browser recovery, and can operate offline after the application shell has been cached.</p>
+<p>The desktop edition remains the preferred environment when direct local-file integration with an installed copy of Endless Space 2 is required.</p></article><footer>ES2 Hero Studio 0.4.0-beta.13 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>
