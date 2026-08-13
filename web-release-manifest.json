@@ -2,10 +2,10 @@
   "format": "hero-studio-web-release",
   "formatVersion": 1,
   "application": "ES2 Hero Studio Web",
-  "version": "0.4.0-beta.13",
+  "version": "0.4.0-beta.14",
   "milestone": "4.0M",
-  "generatedAt": "2026-08-12T22:24:46.225Z",
-  "cacheName": "es2-hero-studio-web-0.4.0-beta.13-098633f3a6cc7873",
+  "generatedAt": "2026-08-13T00:41:28.922Z",
+  "cacheName": "es2-hero-studio-web-0.4.0-beta.14-fcbe932dd32ee7b4",
   "offlineShell": true,
   "localProjectProcessing": true,
   "files": [
