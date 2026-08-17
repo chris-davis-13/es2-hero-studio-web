@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Beta Feedback — ES2 Hero Studio</title>
+  <title>4.0N Release Notes — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -52,7 +52,7 @@
       <h2>Release</h2>
       <a href="known-limitations.html">Known Limitations</a>
 <a href="privacy.html">Privacy and Local Processing</a>
-<a href="feedback.html" aria-current="page" class="is-active">Beta Feedback</a>
+<a href="feedback.html">Beta Feedback</a>
 <a href="release-notes.html">Desktop Release Notes</a>
 <a href="web-release-notes.html">Web Release Notes</a>
 <a href="release-notes-4-0f.html">4.0F Release Notes</a>
@@ -63,7 +63,7 @@
 <a href="release-notes-4-0k.html">4.0K Release Notes</a>
 <a href="release-notes-4-0l.html">4.0L Release Notes</a>
 <a href="release-notes-4-0m.html">4.0M Release Notes</a>
-<a href="release-notes-4-0n.html">4.0N Release Notes</a>
+<a href="release-notes-4-0n.html" aria-current="page" class="is-active">4.0N Release Notes</a>
     </section>
 
     <section>
@@ -71,46 +71,28 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="public-beta-feedback">Public beta feedback</h1>
-<h2 id="before-reporting-a-problem">Before reporting a problem</h2>
-<ol>
-<li>Confirm the application version in Runtime Diagnostics.</li>
-<li>Save a copy of the affected project.</li>
-<li>Reproduce the issue using the public-beta example project when possible.</li>
-<li>Run <code>npm run test:beta</code> only when working from the source repository.</li>
-<li>Check Known Limitations and Troubleshooting.</li>
-</ol>
-<h2 id="create-a-github-issue">Create a GitHub issue</h2>
-<p>Open the repository where the beta was downloaded, select <strong>Issues</strong>, and choose the relevant bug or feature template.</p>
-<p>A useful bug report includes:</p>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-4-0n-real-time-asset-positioning">ES2 Hero Studio 4.0N — Real-Time Asset Positioning</h1>
 <ul>
-<li>application version;</li>
-<li>Mac model and macOS version;</li>
-<li>Apple Silicon or Intel architecture;</li>
-<li>Basic or Advanced mode;</li>
-<li>affected workspace;</li>
-<li>exact reproduction steps;</li>
-<li>expected result;</li>
-<li>actual result;</li>
-<li>whether the issue repeats with the example project;</li>
-<li>screenshots without private information; and</li>
-<li>the privacy-safe Runtime Diagnostics report.</li>
+<li>Version: <code>0.4.0-beta.15</code></li>
+<li>Milestone: <code>4.0N</code></li>
+<li>Project schema: <code>7</code></li>
 </ul>
-<h2 id="do-not-post-privately-owned-content-unintentionally">Do not post privately owned content unintentionally</h2>
-<p>Hero images, project files, imported mods, file paths, and exported XML may contain personal or third-party material. Review attachments before posting them publicly.</p>
-<h2 id="recovery-related-reports">Recovery-related reports</h2>
-<p>For save, backup, autosave, or recovery problems, state which of these operations was involved:</p>
+<h2 id="what-changed">What changed</h2>
+<p>4.0N removes the visible delay that could occur while repositioning artwork in Hero Asset Studio.</p>
 <ul>
-<li>Save</li>
-<li>Save As</li>
-<li>pre-save backup</li>
-<li>latest autosave</li>
-<li>previous autosave</li>
-<li>Recovery Center restore</li>
-<li>damaged-project fallback</li>
-<li>Save and Close</li>
+<li>Crop dragging now uses a local frame-synchronized canvas preview.</li>
+<li>Pointer movement no longer commits project state on every input event.</li>
+<li>The final normalized crop is committed once when a drag finishes.</li>
+<li>Pointer cancellation restores the saved crop instead of committing an incomplete gesture.</li>
+<li>Wheel zoom previews immediately and commits after a short pause.</li>
+<li>Coalesced pointer events are used when the runtime provides them.</li>
+<li>Desktop Electron and browser editions share the same optimized interaction path.</li>
 </ul>
-<p>Do not delete recovery material until a copy has been made.</p></article><footer>ES2 Hero Studio 0.4.0-beta.15 · Desktop and web beta · Project schema 7</footer></main>
+<h2 id="why-this-is-faster">Why this is faster</h2>
+<p>Before 4.0N, each pointer movement wrote the crop into global project state. That could trigger project subscribers, history/event processing, stale-output checks, validation, artwork guidance, and React rendering while the pointer was still moving.</p>
+<p>4.0N keeps temporary interaction state inside the crop canvas and redraws at most once per animation frame. Project state is updated when the interaction is complete.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>Project schema remains version 7. Existing beta.14 projects require no migration. No lower-resolution working copy is introduced. Existing crop normalization, final PNG generation, validation, artwork guidance, Undo/Redo, Release Preflight, and one-hero-per-export semantics remain unchanged.</p></article><footer>ES2 Hero Studio 0.4.0-beta.15 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

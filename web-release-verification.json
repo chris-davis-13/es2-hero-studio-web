@@ -1,11 +1,11 @@
 {
   "format": "hero-studio-web-release-verification",
   "formatVersion": 1,
-  "generatedAt": "2026-08-13T00:41:28.981Z",
+  "generatedAt": "2026-08-17T14:34:16.056Z",
   "status": "pass",
-  "version": "0.4.0-beta.14",
-  "milestone": "4.0M",
-  "files": 178,
+  "version": "0.4.0-beta.15",
+  "milestone": "4.0N",
+  "files": 180,
   "offlineShell": true,
   "installable": true,
   "localProjectProcessing": true

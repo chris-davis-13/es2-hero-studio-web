@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Beta Feedback — ES2 Hero Studio</title>
+  <title>Real-Time Asset Positioning — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -32,7 +32,7 @@
 <a href="guided-creation.html">Guided Creation and Hero Readiness</a>
 <a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
 <a href="artwork-requirement-guidance.html">Artwork Requirement Guidance</a>
-<a href="real-time-asset-positioning.html">Real-Time Asset Positioning</a>
+<a href="real-time-asset-positioning.html" aria-current="page" class="is-active">Real-Time Asset Positioning</a>
 <a href="starter-hero-structures.html">Starter Hero Structures</a>
 <a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
@@ -52,7 +52,7 @@
       <h2>Release</h2>
       <a href="known-limitations.html">Known Limitations</a>
 <a href="privacy.html">Privacy and Local Processing</a>
-<a href="feedback.html" aria-current="page" class="is-active">Beta Feedback</a>
+<a href="feedback.html">Beta Feedback</a>
 <a href="release-notes.html">Desktop Release Notes</a>
 <a href="web-release-notes.html">Web Release Notes</a>
 <a href="release-notes-4-0f.html">4.0F Release Notes</a>
@@ -71,46 +71,21 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="public-beta-feedback">Public beta feedback</h1>
-<h2 id="before-reporting-a-problem">Before reporting a problem</h2>
-<ol>
-<li>Confirm the application version in Runtime Diagnostics.</li>
-<li>Save a copy of the affected project.</li>
-<li>Reproduce the issue using the public-beta example project when possible.</li>
-<li>Run <code>npm run test:beta</code> only when working from the source repository.</li>
-<li>Check Known Limitations and Troubleshooting.</li>
-</ol>
-<h2 id="create-a-github-issue">Create a GitHub issue</h2>
-<p>Open the repository where the beta was downloaded, select <strong>Issues</strong>, and choose the relevant bug or feature template.</p>
-<p>A useful bug report includes:</p>
-<ul>
-<li>application version;</li>
-<li>Mac model and macOS version;</li>
-<li>Apple Silicon or Intel architecture;</li>
-<li>Basic or Advanced mode;</li>
-<li>affected workspace;</li>
-<li>exact reproduction steps;</li>
-<li>expected result;</li>
-<li>actual result;</li>
-<li>whether the issue repeats with the example project;</li>
-<li>screenshots without private information; and</li>
-<li>the privacy-safe Runtime Diagnostics report.</li>
-</ul>
-<h2 id="do-not-post-privately-owned-content-unintentionally">Do not post privately owned content unintentionally</h2>
-<p>Hero images, project files, imported mods, file paths, and exported XML may contain personal or third-party material. Review attachments before posting them publicly.</p>
-<h2 id="recovery-related-reports">Recovery-related reports</h2>
-<p>For save, backup, autosave, or recovery problems, state which of these operations was involved:</p>
-<ul>
-<li>Save</li>
-<li>Save As</li>
-<li>pre-save backup</li>
-<li>latest autosave</li>
-<li>previous autosave</li>
-<li>Recovery Center restore</li>
-<li>damaged-project fallback</li>
-<li>Save and Close</li>
-</ul>
-<p>Do not delete recovery material until a copy has been made.</p></article><footer>ES2 Hero Studio 0.4.0-beta.15 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="real-time-asset-positioning">Real-Time Asset Positioning</h1>
+<p>Milestone 4.0N makes Hero Asset Studio crop positioning responsive in both the desktop and browser editions without changing the saved project format or final image pipeline.</p>
+<h2 id="dragging-artwork">Dragging artwork</h2>
+<p>While you drag, Hero Studio keeps the temporary crop position local to the crop editor. The canvas redraws through <code>requestAnimationFrame</code>, so the visible crop can follow pointer movement without waiting for project-wide state work.</p>
+<p>When the drag finishes, the final normalized crop is committed to the project once. Pointer cancellation restores the last committed crop.</p>
+<h2 id="wheel-zoom">Wheel zoom</h2>
+<p>Wheel zoom uses the same immediate local preview. A short idle delay groups a burst of wheel events before the final crop is committed to project state.</p>
+<h2 id="desktop-and-browser">Desktop and browser</h2>
+<p>The desktop edition uses Electron/Chromium, so desktop and browser builds use the same frame-synchronized crop path.</p>
+<h2 id="image-quality">Image quality</h2>
+<p>4.0N does not downscale the source image. The existing source bitmap, crop normalization, and final PNG generation remain unchanged.</p>
+<h2 id="undo-redo-and-validation">Undo/Redo and validation</h2>
+<p>A completed drag commits one crop update instead of dozens of intermediate updates. Existing history merge keys remain in place, and validation, Changed/Ready status, artwork guidance, autosave, and Release Preflight evaluate the committed crop normally.</p>
+<h2 id="existing-controls">Existing controls</h2>
+<p>Keyboard positioning, crop sliders, copy-crop controls, reset behavior, and output generation remain available. 4.0N specifically optimizes the high-frequency canvas drag and wheel paths that caused visible latency.</p></article><footer>ES2 Hero Studio 0.4.0-beta.15 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

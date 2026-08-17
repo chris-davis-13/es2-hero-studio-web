@@ -1,7 +1,7 @@
 {
   "format": "es2-hero-studio-help-site",
   "version": 1,
-  "applicationVersion": "0.4.0-beta.14",
+  "applicationVersion": "0.4.0-beta.15",
   "documents": [
     {
       "slug": "index",
@@ -67,6 +67,12 @@
       "slug": "artwork-requirement-guidance",
       "title": "Artwork Requirement Guidance",
       "source": "docs/Artwork-Requirement-Guidance.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "real-time-asset-positioning",
+      "title": "Real-Time Asset Positioning",
+      "source": "docs/Real-Time-Asset-Positioning.md",
       "group": "Authoring"
     },
     {
@@ -199,6 +205,12 @@
       "slug": "release-notes-4-0m",
       "title": "4.0M Release Notes",
       "source": "docs/4.0M-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-0n",
+      "title": "4.0N Release Notes",
+      "source": "docs/4.0N-Release-Notes.md",
       "group": "Release"
     },
     {
