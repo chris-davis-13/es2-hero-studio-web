@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Import and XML Safety — ES2 Hero Studio</title>
+  <title>Schema-8 Release Readiness — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -40,7 +40,7 @@
 <a href="starter-hero-structures.html">Starter Hero Structures</a>
 <a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
-<a href="import-xml.html" aria-current="page" class="is-active">Import and XML Safety</a>
+<a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
 <a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
@@ -74,7 +74,7 @@
 <a href="release-notes-4-1c.html">4.1C Release Notes</a>
 <a href="release-notes-4-1d.html">4.1D Release Notes</a>
 <a href="release-notes-4-1e.html">4.1E Release Notes</a>
-<a href="schema8-release-readiness.html">Schema-8 Release Readiness</a>
+<a href="schema8-release-readiness.html" aria-current="page" class="is-active">Schema-8 Release Readiness</a>
 <a href="release-notes-4-1f.html">4.1F Release Notes</a>
     </section>
 
@@ -83,21 +83,48 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="import-review-and-xml-safety">Import Review and XML safety</h1>
-<h2 id="review-before-applying">Review before applying</h2>
-<p>Choose <strong>Review Import ZIP</strong> rather than replacing the open project directly. Hero Studio analyzes the archive, identifies recognized files, preserves unsupported content where possible, and compares source XML with regenerated XML.</p>
-<p>The current project remains unchanged until <strong>Apply Reviewed Import</strong> is selected.</p>
-<h2 id="hero-studio-snapshots">Hero Studio snapshots</h2>
-<p>ZIPs created by Hero Studio include <code>HeroStudioProjectSnapshot.json</code>. A valid snapshot restores editor-only data such as prerequisite edges, guided-effect metadata, stable IDs, localization structure, dependency catalogs, external references, and release settings.</p>
-<p>Image bytes are rehydrated from the packaged PNG files rather than duplicated inside the snapshot.</p>
-<h2 id="third-party-zips">Third-party ZIPs</h2>
-<p>When no valid Hero Studio snapshot exists, the XML importer reconstructs the project from recognized ES2 files. Unsupported files are listed for preservation or review.</p>
-<p>A malformed snapshot produces a warning and falls back to XML import rather than being trusted.</p>
-<h2 id="semantic-comparison">Semantic comparison</h2>
-<p>XML formatting differences do not necessarily represent game-data changes. Semantic comparison normalizes XML structure so whitespace-only changes can be separated from meaningful additions, removals, and modifications.</p>
-<h2 id="undo-and-restoration">Undo and restoration</h2>
-<p>Applying a reviewed import is a single Undo/Redo operation. Hero Studio also retains a pre-import project snapshot for explicit restoration.</p>
-<p>Save a separate <code>.hsproj</code> copy before importing complex third-party mods.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="schema-8-release-readiness">Schema-8 Release Readiness</h1>
+<p>Milestone <strong>4.1F</strong> completes the 4.1 Complete Hero Skill System and makes schema 8 authoritative for release generation.</p>
+<h2 id="release-contract">Release contract</h2>
+<p>A schema-8 hero release now requires:</p>
+<ol>
+<li>exactly <strong>two</strong> canonical Innate Skill references;</li>
+<li>exactly <strong>three</strong> canonical tree relationships — <strong>Generic</strong>, <strong>Class</strong>, and <strong>Racial</strong>;</li>
+<li>valid content in each canonical tree container;</li>
+<li>no unresolved schema-7 authored tree; and</li>
+<li>no preserved extra schema-7 direct-skill IDs.</li>
+</ol>
+<p>Hero Studio does not guess or silently discard unresolved legacy data.</p>
+<h2 id="xml-output">XML output</h2>
+<p><code>HeroDefinitions.xml</code> writes exactly two <code>&lt;Skill&gt;</code> references from the canonical Innate slots and exactly three <code>&lt;SkillTree&gt;</code> references.</p>
+<p><code>HeroSkillTreeDefinitions.xml</code> writes three project-owned tree definitions with deterministic names based on the hero internal name:</p>
+<ul>
+<li><code>&lt;InternalName&gt;_GenericTree</code></li>
+<li><code>&lt;InternalName&gt;_ClassTree</code></li>
+<li><code>&lt;InternalName&gt;_RacialTree</code></li>
+</ul>
+<p>Existing ES2 skills remain references only and are not redefined. Custom project skills used in canonical trees are exported as <code>HeroSkillDefinition</code> records. A custom skill used only as an Innate assignment is also exported as a definition without turning Innate into a permanent skill type.</p>
+<h2 id="legacy-reconciliation">Legacy reconciliation</h2>
+<p>A migrated schema-7 project can contain information that schema 8 must not interpret automatically.</p>
+<h3 id="preserved-authored-tree">Preserved authored tree</h3>
+<p>In the Three-Tree Workspace, choose the intended canonical tab and use <strong>Move legacy tree to …</strong>. The move is allowed only when that destination tree is empty, so Hero Studio cannot overwrite canonical work.</p>
+<h3 id="extra-direct-skills">Extra direct skills</h3>
+<p>Hero Data continues to show any direct IDs beyond the two canonical Innate slots. Use <strong>Remove preserved extras</strong> only after reviewing them. The action is explicit and confirmed.</p>
+<p>Until these items are resolved, Release Preflight blocks export with stable schema-8 error codes.</p>
+<h2 id="shared-tool-cutover">Shared-tool cutover</h2>
+<p>4.1F also makes canonical trees first-class in:</p>
+<ul>
+<li>Reference Explorer and orphan detection;</li>
+<li>localization assignment tracking;</li>
+<li>Global Search;</li>
+<li>project validation; and</li>
+<li>shared-skill update/removal behavior.</li>
+</ul>
+<p>A preserved legacy graph remains visible to these systems until it is deliberately reconciled.</p>
+<h2 id="compatibility">Compatibility</h2>
+<p>The low-level XML builder retains a schema-7 fallback for historical fixtures and reviewed third-party compatibility paths. Current schema-8 release inspection does <strong>not</strong> use that fallback when unresolved legacy data exists.</p>
+<h2 id="local-data-policy">Local data policy</h2>
+<p>The ES2 catalog remains local and read-only. Schema-8 release readiness does not write to installed Endless Space 2 files and does not require uploading game data.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

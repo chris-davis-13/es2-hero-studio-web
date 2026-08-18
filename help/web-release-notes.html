@@ -11,7 +11,7 @@
 <body>
   <a class="skip-link" href="#content">Skip to documentation</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.15 public beta documentation</small></span></a>
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.1-beta.6 public beta documentation</small></span></a>
   </header>
   <div class="layout">
     <nav class="sidebar" aria-label="Documentation">
@@ -28,6 +28,10 @@
       <a href="user-guide.html">User Guide</a>
 <a href="templates-guidance.html">Templates and Contextual Guidance</a>
 <a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="complete-hero-skill-system.html">Complete Hero Skill System</a>
+<a href="hero-skill-eligibility.html">Hero Skill Eligibility</a>
+<a href="innate-skills.html">Innate Skills</a>
+<a href="three-tree-workspace.html">Three-Tree Workspace</a>
 <a href="guided-gameplay.html">Guided Gameplay Definition</a>
 <a href="guided-creation.html">Guided Creation and Hero Readiness</a>
 <a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
@@ -39,6 +43,7 @@
 <a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
+<a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
     </section>
 
     <section>
@@ -64,6 +69,13 @@
 <a href="release-notes-4-0l.html">4.0L Release Notes</a>
 <a href="release-notes-4-0m.html">4.0M Release Notes</a>
 <a href="release-notes-4-0n.html">4.0N Release Notes</a>
+<a href="release-notes-4-1a.html">4.1A Release Notes</a>
+<a href="release-notes-4-1b.html">4.1B Release Notes</a>
+<a href="release-notes-4-1c.html">4.1C Release Notes</a>
+<a href="release-notes-4-1d.html">4.1D Release Notes</a>
+<a href="release-notes-4-1e.html">4.1E Release Notes</a>
+<a href="schema8-release-readiness.html">Schema-8 Release Readiness</a>
+<a href="release-notes-4-1f.html">4.1F Release Notes</a>
     </section>
 
     <section>
@@ -71,49 +83,56 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-web-beta-0-4-0-beta-15">ES2 Hero Studio Web Beta 0.4.0-beta.15</h1>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-web-beta-0-4-1-beta-6">ES2 Hero Studio Web Beta 0.4.1-beta.6</h1>
 <h2 id="release-identity">Release identity</h2>
 <ul>
-<li>Version: <code>0.4.0-beta.15</code></li>
-<li>Milestone: <code>4.0N</code></li>
-<li>Project schema: <code>7</code></li>
+<li>Version: <code>0.4.1-beta.6</code></li>
+<li>Milestone: <code>4.1F</code></li>
+<li>Project schema: <code>8</code></li>
 <li>Release type: public browser beta</li>
 </ul>
-<h2 id="highlights">Highlights</h2>
+<h2 id="4-1-highlights">4.1 highlights</h2>
 <ul>
-<li>Real-time Asset Studio positioning with frame-synchronized drag and wheel previews</li>
+<li>Complete Hero Skill System with exactly two Innate assignments and independent Generic, Class, and Racial trees</li>
+<li>Relationship-aware Generic/Class/Racial skill eligibility from locally indexed ES2 HeroDefinitions</li>
+<li>Multi-affinity racial relationship support</li>
+<li>Dedicated two-slot Innate Skill workflow</li>
+<li>Three-Tree Workspace for canonical schema-8 authoring</li>
+<li>Local ES2 Skill Catalog placement directly into the selected canonical tree</li>
+<li>Schema-8 release readiness and XML generation</li>
+<li>Explicit reconciliation controls for migrated schema-7 legacy tree/direct data</li>
+<li>Canonical-tree-aware release preflight, validation, references, localization, search, and shared-skill maintenance</li>
 </ul>
+<h2 id="browser-capabilities">Browser capabilities</h2>
 <ul>
-<li>Starter Hero Structures with guidance-only previews, real-tree comparison, author decision prompts, and safe metadata-only switching</li>
-<li>Artwork Requirement Guidance with per-output source-fit, crop enlargement, framing, package-path, and next-action explanations</li>
-<li>Skill Tree Progression Guidance with entry branches, shortest path explanations, gateway skills, endpoints, disconnected islands, and preserved tier/reachability review</li>
-<li>Relationship-Aware Recommendations for the active hero, with advisory evidence across Class, Affinity, Politics, Ship Design, direct skills, Skill Tree content, and configured effects</li>
-<li>Static browser release deployable to GitHub Pages, Cloudflare Pages, Netlify, or another HTTPS static host</li>
-<li>Official ES2 Hero Studio branding and installable web-app manifest</li>
-<li>IndexedDB latest/previous recovery snapshots with legacy localStorage migration</li>
-<li>Recovery snapshot download</li>
-<li>Direct project file saving where the browser grants access</li>
-<li>Download-based saving fallback everywhere else</li>
-<li>Reopenable recent browser files where persistent handles are supported</li>
+<li>Static HTTPS release published through separate public <code>chris-davis-13/es2-hero-studio-web</code></li>
+<li>Private <code>es2-hero-studio</code> source/development repository remains separate from hosted browser files</li>
+<li>Official branding and installable web-app manifest</li>
+<li>IndexedDB recovery snapshots and recovery download</li>
+<li>Direct project-file saving where browser permissions support it</li>
+<li>Download-based saving fallback</li>
 <li>Validated ES2 ZIP generation in the browser</li>
 <li>Capability-aware clean-folder export</li>
-<li>Browser compatibility and local-processing status bar</li>
-<li>Optional persistent-storage request</li>
 <li>Installable/offline application shell</li>
-<li>Manual GitHub Pages deployment workflow</li>
-<li>Verified web-release package and checksums</li>
+<li>Verified web-release package, manifest, and checksums</li>
+<li>Real-time Asset Studio positioning</li>
+<li>Guided creation, readiness, progression, artwork, relationship, template, and starter-structure workflows</li>
 </ul>
+<h2 id="local-es2-game-data-access">Local ES2 game-data access</h2>
+<p>The browser cannot silently inspect an installed game. Users select the relevant ES2 <code>Public</code> folder or XML files. Parsing and catalog storage remain local.</p>
+<p>The browser edition never modifies installed Endless Space 2 files and does not upload selected game data.</p>
 <h2 id="important-limitations">Important limitations</h2>
 <ul>
-<li>Browser recovery can be removed with site data and is not a substitute for downloaded project backups.</li>
+<li>Browser recovery can be removed with site data and is not a substitute for downloaded backups.</li>
 <li>Direct file and directory access varies by browser.</li>
-<li>One hero per exported mod package remains the current beta release policy.</li>
-<li>Automatic face/object detection may require external MediaPipe resources.</li>
+<li>One hero per exported mod package remains the beta release policy.</li>
+<li>Automatic image detection may require external MediaPipe resources.</li>
 <li>No account, cloud synchronization, collaborative editing, or direct Steam Workshop upload is included.</li>
 <li>A native Windows package remains deferred while browser compatibility is evaluated.</li>
 </ul>
 <h2 id="privacy">Privacy</h2>
-<p>Hero project content is processed locally. The hosted app contains no analytics, advertising, or project-upload service. Optional image-detection resources are documented separately.</p></article><footer>ES2 Hero Studio 0.4.0-beta.15 · Desktop and web beta · Project schema 7</footer></main>
+<p>Hero project content is processed locally. The hosted app contains no analytics, advertising, or project-upload service.</p>
+<p>Only generated static browser-release files belong in the public web repository; private source, projects, installed-game XML, credentials, and signing material remain outside it.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

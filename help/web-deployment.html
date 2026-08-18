@@ -11,7 +11,7 @@
 <body>
   <a class="skip-link" href="#content">Skip to documentation</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.15 public beta documentation</small></span></a>
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.1-beta.6 public beta documentation</small></span></a>
   </header>
   <div class="layout">
     <nav class="sidebar" aria-label="Documentation">
@@ -28,6 +28,10 @@
       <a href="user-guide.html">User Guide</a>
 <a href="templates-guidance.html">Templates and Contextual Guidance</a>
 <a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="complete-hero-skill-system.html">Complete Hero Skill System</a>
+<a href="hero-skill-eligibility.html">Hero Skill Eligibility</a>
+<a href="innate-skills.html">Innate Skills</a>
+<a href="three-tree-workspace.html">Three-Tree Workspace</a>
 <a href="guided-gameplay.html">Guided Gameplay Definition</a>
 <a href="guided-creation.html">Guided Creation and Hero Readiness</a>
 <a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
@@ -39,6 +43,7 @@
 <a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
+<a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
     </section>
 
     <section>
@@ -64,6 +69,13 @@
 <a href="release-notes-4-0l.html">4.0L Release Notes</a>
 <a href="release-notes-4-0m.html">4.0M Release Notes</a>
 <a href="release-notes-4-0n.html">4.0N Release Notes</a>
+<a href="release-notes-4-1a.html">4.1A Release Notes</a>
+<a href="release-notes-4-1b.html">4.1B Release Notes</a>
+<a href="release-notes-4-1c.html">4.1C Release Notes</a>
+<a href="release-notes-4-1d.html">4.1D Release Notes</a>
+<a href="release-notes-4-1e.html">4.1E Release Notes</a>
+<a href="schema8-release-readiness.html">Schema-8 Release Readiness</a>
+<a href="release-notes-4-1f.html">4.1F Release Notes</a>
     </section>
 
     <section>
@@ -71,65 +83,73 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html" aria-current="page" class="is-active">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="deploy-the-web-beta-with-github-pages">Deploy the web beta with GitHub Pages</h1>
-<p>The repository includes a manual GitHub Actions workflow that builds, tests, and deploys the verified static browser application.</p>
-<h2 id="before-publishing">Before publishing</h2>
-<p>Confirm in GitHub Desktop:</p>
-<pre><code class="language-text">Current Branch: feature/4.0-beta
-No local changes</code></pre>
-<p>Run locally:</p>
-<pre><code class="language-bash">npm run test:beta
-npm run build:web-beta
-npm run preview:web-beta</code></pre>
-<p>Complete the browser manual checks before publishing.</p>
-<h2 id="enable-github-pages">Enable GitHub Pages</h2>
-<ol>
-<li>Open the repository on GitHub.com.</li>
-<li>Select <strong>Settings</strong>.</li>
-<li>Select <strong>Pages</strong> under <strong>Code and automation</strong>.</li>
-<li>Under <strong>Build and deployment</strong>, set <strong>Source</strong> to <strong>GitHub Actions</strong>.</li>
-<li>Save the setting if GitHub presents a Save button.</li>
-</ol>
-<h2 id="run-the-deployment">Run the deployment</h2>
-<ol>
-<li>Open the repository’s <strong>Actions</strong> tab.</li>
-<li>Select <strong>Deploy ES2 Hero Studio Web Beta</strong>.</li>
-<li>Select <strong>Run workflow</strong>.</li>
-<li>Choose the tested branch or the final merged release branch.</li>
-<li>Select <strong>Run workflow</strong> again.</li>
-<li>Wait for both the <strong>build</strong> and <strong>deploy</strong> jobs to succeed.</li>
-<li>Open the deployment URL shown by the completed workflow.</li>
-</ol>
-<p>The workflow performs:</p>
+    <main id="content" tabindex="-1"><article><h1 id="deploy-the-es2-hero-studio-0-4-1-beta-6-web-beta-with-github-pages">Deploy the ES2 Hero Studio 0.4.1-beta.6 web beta with GitHub Pages</h1>
+<p>ES2 Hero Studio deliberately uses <strong>two repositories</strong> for the public beta:</p>
 <ul>
-<li>a clean dependency installation;</li>
-<li>the complete beta regression suite;</li>
-<li>the verified web-beta build;</li>
-<li>GitHub Pages artifact upload; and</li>
-<li>deployment to the <code>github-pages</code> environment.</li>
+<li><code>es2-hero-studio</code> — private source/development repository for the desktop application and browser source.</li>
+<li><code>es2-hero-studio-web</code> — public static-site repository containing only the generated browser release.</li>
 </ul>
-<p>No application secret or API key is required.</p>
-<h2 id="verify-the-hosted-release">Verify the hosted release</h2>
-<p>On the published address:</p>
+<p>Keep <code>es2-hero-studio</code> private. Do not enable GitHub Pages in the private source repository.</p>
+<h2 id="before-publishing">Before publishing</h2>
+<p>Publish only from final tested release content. In private <code>es2-hero-studio</code>, confirm:</p>
+<pre><code class="language-text">Current Branch: main
+No unrelated local changes
+Version: 0.4.1-beta.6
+Milestone: 4.1F</code></pre>
+<p>The release should already have passed:</p>
+<pre><code class="language-bash">npm run test:beta
+npm run build
+npm run release:web-beta
+npm run preview:web-beta</code></pre>
+<h2 id="build-the-verified-browser-release">Build the verified browser release</h2>
+<p>From private <code>es2-hero-studio</code>:</p>
+<pre><code class="language-bash">npm run release:web-beta</code></pre>
+<p>The assembled release is:</p>
+<pre><code class="language-text">release/web-beta/ES2-Hero-Studio-Web-0.4.1-beta.6/</code></pre>
+<p>The <strong>deployable website</strong> is the contents of:</p>
+<pre><code class="language-text">release/web-beta/ES2-Hero-Studio-Web-0.4.1-beta.6/Site/</code></pre>
+<p>The outer bundle also contains documentation, checksums, and release metadata. Do not copy the outer bundle itself into the public web repository.</p>
+<h2 id="publish-to-the-separate-public-repository">Publish to the separate public repository</h2>
+<p>Use:</p>
+<pre><code class="language-text">chris-davis-13/es2-hero-studio-web</code></pre>
 <ol>
-<li>Confirm the official icon and <strong>PUBLIC WEB BETA</strong> identity.</li>
-<li>Create a project.</li>
-<li>Add an image.</li>
-<li>Save or download the <code>.hsproj</code> file.</li>
-<li>Reopen it.</li>
-<li>Open Recovery Center and download a recovery copy.</li>
+<li>Open the local clone of <code>es2-hero-studio-web</code>.</li>
+<li>Switch to <code>main</code>.</li>
+<li>Fetch/pull the current public repository.</li>
+<li>Confirm there are no unrelated local changes.</li>
+<li>Replace the deployed static-site files in the repository root with the <strong>contents</strong> of the verified <code>Site/</code> directory.</li>
+<li>Do not copy the outer <code>Documentation/</code>, <code>README-FIRST.md</code>, <code>SHA256SUMS.txt</code>, or <code>web-beta-manifest.json</code> into the deployed root unless they are part of <code>Site/</code>.</li>
+<li>Confirm the public root contains generated site files such as <code>index.html</code>, <code>service-worker.js</code>, <code>manifest.webmanifest</code>, <code>.nojekyll</code>, <code>assets/</code>, <code>help/</code>, and web-release verification files.</li>
+<li>Review the changes in GitHub Desktop.</li>
+<li>Commit with:</li>
+</ol>
+<pre><code class="language-text">Publish ES2 Hero Studio Web 0.4.1-beta.6</code></pre>
+<ol>
+<li>Push <code>main</code>.</li>
+</ol>
+<p>The public <code>es2-hero-studio-web</code> repository is the only repository intended to host the GitHub Pages site. Preserve its existing known-good Pages configuration; do not enable Pages in the private source repository.</p>
+<h2 id="verify-the-hosted-schema-8-release">Verify the hosted schema-8 release</h2>
+<p>After deployment:</p>
+<ol>
+<li>Confirm official icon and <strong>PUBLIC WEB BETA</strong> identity.</li>
+<li>Confirm version <code>0.4.1-beta.6</code>.</li>
+<li>Create a fresh hero project.</li>
+<li>Assign two Innate Skills.</li>
+<li>Exercise Generic, Class, and Racial tree tabs.</li>
+<li>Download and reopen the <code>.hsproj</code>.</li>
+<li>Download a Recovery Center copy.</li>
 <li>Run Release Preflight.</li>
-<li>Export a validated ZIP.</li>
-<li>Reload the site and confirm it opens normally.</li>
-<li>Disconnect from the network temporarily and confirm the cached application shell opens.</li>
-<li>Test at least Safari and one Chromium-based browser before broadly sharing the link.</li>
+<li>Download a validated ZIP.</li>
+<li>Reload normally.</li>
+<li>Confirm the cached application shell opens offline after an initial successful load.</li>
+<li>Test Safari and at least one Chromium-based browser.</li>
 </ol>
 <h2 id="updating-the-site">Updating the site</h2>
-<p>Commit and push the tested update, then run the same manual workflow again. GitHub Pages replaces the prior deployment after the new build succeeds. The generated service worker uses a versioned cache and removes older Hero Studio caches after activation.</p>
+<p>For later releases, build and verify in private <code>es2-hero-studio</code>, copy only generated <code>Site/</code> contents into public <code>es2-hero-studio-web</code>, review the public diff, commit with the public web release version, and push the public repository.</p>
 <h2 id="rolling-back">Rolling back</h2>
-<p>Use the GitHub repository history to restore the last known-good release commit, test it locally, and rerun the workflow. Do not deploy untested working-tree files.</p>
-<h2 id="custom-domain-later">Custom domain later</h2>
-<p>A custom domain can be configured in <strong>Settings → Pages</strong> after the default Pages address is verified. The application uses relative production paths, so the same build can operate from a repository subpath or a custom-domain root.</p></article><footer>ES2 Hero Studio 0.4.0-beta.15 · Desktop and web beta · Project schema 7</footer></main>
+<p>Restore the last known-good commit in <code>es2-hero-studio-web</code> and verify the hosted application.</p>
+<h2 id="privacy-boundary">Privacy boundary</h2>
+<p>Never publish private source files, local <code>.hsproj</code> projects, installed Endless Space 2 XML, signing material, credentials, development-only files, or private repository history to <code>es2-hero-studio-web</code>.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

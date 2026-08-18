@@ -11,7 +11,7 @@
 <body>
   <a class="skip-link" href="#content">Skip to documentation</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.15 public beta documentation</small></span></a>
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.1-beta.6 public beta documentation</small></span></a>
   </header>
   <div class="layout">
     <nav class="sidebar" aria-label="Documentation">
@@ -28,6 +28,10 @@
       <a href="user-guide.html">User Guide</a>
 <a href="templates-guidance.html">Templates and Contextual Guidance</a>
 <a href="es2-skill-catalog.html" aria-current="page" class="is-active">ES2 Skill Catalog</a>
+<a href="complete-hero-skill-system.html">Complete Hero Skill System</a>
+<a href="hero-skill-eligibility.html">Hero Skill Eligibility</a>
+<a href="innate-skills.html">Innate Skills</a>
+<a href="three-tree-workspace.html">Three-Tree Workspace</a>
 <a href="guided-gameplay.html">Guided Gameplay Definition</a>
 <a href="guided-creation.html">Guided Creation and Hero Readiness</a>
 <a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
@@ -39,6 +43,7 @@
 <a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
+<a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
     </section>
 
     <section>
@@ -64,6 +69,13 @@
 <a href="release-notes-4-0l.html">4.0L Release Notes</a>
 <a href="release-notes-4-0m.html">4.0M Release Notes</a>
 <a href="release-notes-4-0n.html">4.0N Release Notes</a>
+<a href="release-notes-4-1a.html">4.1A Release Notes</a>
+<a href="release-notes-4-1b.html">4.1B Release Notes</a>
+<a href="release-notes-4-1c.html">4.1C Release Notes</a>
+<a href="release-notes-4-1d.html">4.1D Release Notes</a>
+<a href="release-notes-4-1e.html">4.1E Release Notes</a>
+<a href="schema8-release-readiness.html">Schema-8 Release Readiness</a>
+<a href="release-notes-4-1f.html">4.1F Release Notes</a>
     </section>
 
     <section>
@@ -134,7 +146,13 @@
 <li>Clearing the catalog does not remove skills already assigned to a project.</li>
 <li>The ES2 installation is never changed by this feature.</li>
 </ul>
-<p>Release Preflight remains the final authority for project readiness. A catalog entry confirms that Hero Studio found a skill identifier in the indexed game data; it does not guarantee every unconventional class, faction, DLC, or mod combination will behave as intended in every ES2 game state.</p></article><footer>ES2 Hero Studio 0.4.0-beta.15 · Desktop and web beta · Project schema 7</footer></main>
+<p>Release Preflight remains the final authority for project readiness. A catalog entry confirms that Hero Studio found a skill identifier in the indexed game data; it does not guarantee every unconventional class, faction, DLC, or mod combination will behave as intended in every ES2 game state.</p>
+<h2 id="4-1b-active-hero-eligibility">4.1B active-hero eligibility</h2>
+<p>With authoritative HeroDefinitions, the catalog evaluates Generic, Class, and Racial eligibility for the active hero. Direct-only assignments are reserved for 4.1C. Missing evidence is shown as Needs data and remains non-blocking. The catalog defaults to Eligible for authoritative data and All for partial selections.</p>
+<h2 id="4-1e-canonical-tree-placement">4.1E canonical tree placement</h2>
+<p>From Skill Tree, <strong>Add from ES2 catalog</strong> targets the active Generic, Class, or Racial tree. Relationship evidence is checked for that destination before assignment. Existing ES2 definitions remain read-only and local; direct-only assignments remain part of the Innate workflow.</p>
+<h2 id="4-1f-release-behavior">4.1F release behavior</h2>
+<p>Existing ES2 skills placed from the local catalog remain reference-only in schema-8 exports. Hero Studio emits project-owned definitions only for custom skills, while preserving native game definitions as external references. Installed Endless Space 2 data remains read-only.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

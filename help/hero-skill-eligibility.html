@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Import and XML Safety — ES2 Hero Studio</title>
+  <title>Hero Skill Eligibility — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -29,7 +29,7 @@
 <a href="templates-guidance.html">Templates and Contextual Guidance</a>
 <a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
 <a href="complete-hero-skill-system.html">Complete Hero Skill System</a>
-<a href="hero-skill-eligibility.html">Hero Skill Eligibility</a>
+<a href="hero-skill-eligibility.html" aria-current="page" class="is-active">Hero Skill Eligibility</a>
 <a href="innate-skills.html">Innate Skills</a>
 <a href="three-tree-workspace.html">Three-Tree Workspace</a>
 <a href="guided-gameplay.html">Guided Gameplay Definition</a>
@@ -40,7 +40,7 @@
 <a href="starter-hero-structures.html">Starter Hero Structures</a>
 <a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
-<a href="import-xml.html" aria-current="page" class="is-active">Import and XML Safety</a>
+<a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
 <a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
@@ -83,21 +83,25 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="import-review-and-xml-safety">Import Review and XML safety</h1>
-<h2 id="review-before-applying">Review before applying</h2>
-<p>Choose <strong>Review Import ZIP</strong> rather than replacing the open project directly. Hero Studio analyzes the archive, identifies recognized files, preserves unsupported content where possible, and compares source XML with regenerated XML.</p>
-<p>The current project remains unchanged until <strong>Apply Reviewed Import</strong> is selected.</p>
-<h2 id="hero-studio-snapshots">Hero Studio snapshots</h2>
-<p>ZIPs created by Hero Studio include <code>HeroStudioProjectSnapshot.json</code>. A valid snapshot restores editor-only data such as prerequisite edges, guided-effect metadata, stable IDs, localization structure, dependency catalogs, external references, and release settings.</p>
-<p>Image bytes are rehydrated from the packaged PNG files rather than duplicated inside the snapshot.</p>
-<h2 id="third-party-zips">Third-party ZIPs</h2>
-<p>When no valid Hero Studio snapshot exists, the XML importer reconstructs the project from recognized ES2 files. Unsupported files are listed for preservation or review.</p>
-<p>A malformed snapshot produces a warning and falls back to XML import rather than being trusted.</p>
-<h2 id="semantic-comparison">Semantic comparison</h2>
-<p>XML formatting differences do not necessarily represent game-data changes. Semantic comparison normalizes XML structure so whitespace-only changes can be separated from meaningful additions, removals, and modifications.</p>
-<h2 id="undo-and-restoration">Undo and restoration</h2>
-<p>Applying a reviewed import is a single Undo/Redo operation. Hero Studio also retains a pre-import project snapshot for explicit restoration.</p>
-<p>Save a separate <code>.hsproj</code> copy before importing complex third-party mods.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="hero-skill-eligibility">Hero Skill Eligibility</h1>
+<p>Milestone <strong>4.1B</strong> adds hero-specific eligibility evaluation to the schema-8 Complete Hero Skill System.</p>
+<h2 id="canonical-rules">Canonical rules</h2>
+<ul>
+<li><strong>Generic / Universal:</strong> eligible for every hero.</li>
+<li><strong>Class:</strong> eligible when the active hero&#039;s exact <code>heroClass</code> appears in the authoritative HeroDefinition relationships for that tree.</li>
+<li><strong>Racial / Affinity:</strong> eligible when the active hero&#039;s exact <code>affinity</code> appears in the authoritative HeroDefinition relationships for that tree.</li>
+<li>One Racial tree may map to multiple affinity identifiers; membership is checked against the full set.</li>
+<li>A direct-only <code>&lt;Skill&gt;</code> assignment is <strong>Direct assignment</strong>, not a fourth tree. Dedicated Innate authoring remains 4.1C.</li>
+<li>A rare skill that is both direct and in a tree keeps its tree eligibility.</li>
+</ul>
+<h2 id="unknown-is-not-ineligible">Unknown is not ineligible</h2>
+<p>Partial browser-selected XML may omit HeroDefinitions or class/affinity relationships. When the app cannot prove eligibility either way, the result is <strong>Needs data</strong>. Unknown skills remain non-blocking so incomplete local selections do not create false rejections.</p>
+<h2 id="skill-catalog-behavior">Skill Catalog behavior</h2>
+<p>The catalog now shows an active-hero summary and filter: Eligible, All, Ineligible, Needs data, and Direct assignment. With authoritative HeroDefinitions it defaults to Eligible; with partial data it defaults to All.</p>
+<p>Known ineligible skills and direct-only assignments are prevented from being added as tree skills. Unknown skills remain available with incomplete-data status.</p>
+<h2 id="data-and-milestone-boundaries">Data and milestone boundaries</h2>
+<p>All ES2 data remains local and read-only. Project schema remains <strong>8</strong>.</p>
+<p>4.1B does not implement the two Innate slots (4.1C), the dedicated three-tree workspace (4.1D), full role-aware catalog insertion into canonical trees (4.1E), or schema-8 release/export readiness (4.1F).</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

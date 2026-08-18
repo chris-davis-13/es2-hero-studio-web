@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Import and XML Safety — ES2 Hero Studio</title>
+  <title>Canonical Tree Catalog Integration — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -40,10 +40,10 @@
 <a href="starter-hero-structures.html">Starter Hero Structures</a>
 <a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
-<a href="import-xml.html" aria-current="page" class="is-active">Import and XML Safety</a>
+<a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
-<a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
+<a href="canonical-tree-catalog-integration.html" aria-current="page" class="is-active">Canonical Tree Catalog Integration</a>
     </section>
 
     <section>
@@ -83,21 +83,35 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="import-review-and-xml-safety">Import Review and XML safety</h1>
-<h2 id="review-before-applying">Review before applying</h2>
-<p>Choose <strong>Review Import ZIP</strong> rather than replacing the open project directly. Hero Studio analyzes the archive, identifies recognized files, preserves unsupported content where possible, and compares source XML with regenerated XML.</p>
-<p>The current project remains unchanged until <strong>Apply Reviewed Import</strong> is selected.</p>
-<h2 id="hero-studio-snapshots">Hero Studio snapshots</h2>
-<p>ZIPs created by Hero Studio include <code>HeroStudioProjectSnapshot.json</code>. A valid snapshot restores editor-only data such as prerequisite edges, guided-effect metadata, stable IDs, localization structure, dependency catalogs, external references, and release settings.</p>
-<p>Image bytes are rehydrated from the packaged PNG files rather than duplicated inside the snapshot.</p>
-<h2 id="third-party-zips">Third-party ZIPs</h2>
-<p>When no valid Hero Studio snapshot exists, the XML importer reconstructs the project from recognized ES2 files. Unsupported files are listed for preservation or review.</p>
-<p>A malformed snapshot produces a warning and falls back to XML import rather than being trusted.</p>
-<h2 id="semantic-comparison">Semantic comparison</h2>
-<p>XML formatting differences do not necessarily represent game-data changes. Semantic comparison normalizes XML structure so whitespace-only changes can be separated from meaningful additions, removals, and modifications.</p>
-<h2 id="undo-and-restoration">Undo and restoration</h2>
-<p>Applying a reviewed import is a single Undo/Redo operation. Hero Studio also retains a pre-import project snapshot for explicit restoration.</p>
-<p>Save a separate <code>.hsproj</code> copy before importing complex third-party mods.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="canonical-tree-catalog-integration">Canonical Tree Catalog Integration</h1>
+<p>Milestone <strong>4.1E</strong> connects the local ES2 Skill Catalog directly to the schema-8 <strong>Generic</strong>, <strong>Class</strong>, and <strong>Racial</strong> tree workspaces.</p>
+<h2 id="selected-tree-eligibility">Selected-tree eligibility</h2>
+<p>Catalog eligibility is now evaluated against the tree that is currently open.</p>
+<ul>
+<li><strong>Generic</strong> requires an authoritative Generic tree relationship.</li>
+<li><strong>Class</strong> requires both a Class tree relationship and a match with the active hero&#039;s <code>heroClass</code>.</li>
+<li><strong>Racial</strong> requires both a Racial tree relationship and a match with the active hero&#039;s <code>affinity</code>.</li>
+<li>A skill that is eligible somewhere else on the hero is still blocked from the wrong selected tree.</li>
+<li>Direct-only skills remain outside the tree workflow and belong in the dedicated Innate assignment workflow.</li>
+<li>Missing or partial relationship evidence remains <strong>Needs data</strong> and is non-blocking rather than guessed.</li>
+</ul>
+<h2 id="local-catalog-placement">Local catalog placement</h2>
+<p>Choose <strong>Add from ES2 catalog</strong> in Skill Tree. The catalog identifies the active destination tree and inserts selected ES2 references directly into that canonical schema-8 tree.</p>
+<p>Existing ES2 definitions remain read-only. Hero Studio stores a local reference snapshot and never modifies the installed game data.</p>
+<h2 id="source-fidelity">Source fidelity</h2>
+<p>Native catalog assignments retain the relationship metadata already indexed in 4.1A, including:</p>
+<ul>
+<li>tree roles and source tree names;</li>
+<li>HeroClass and HeroAffinity relationships;</li>
+<li>direct-assignment evidence;</li>
+<li>source <code>SkillLevel</code> declarations; and</li>
+<li>source <code>MasteryLevel</code> declarations.</li>
+</ul>
+<p>4.1E does not invent or flatten those level structures into guessed authoring values.</p>
+<h2 id="separation-from-innate-skills">Separation from Innate Skills</h2>
+<p>The two Innate slots remain in Hero Data and are not tree tabs. Direct-only catalog entries are not inserted into Generic, Class, or Racial trees.</p>
+<h2 id="4-1f-boundary">4.1F boundary</h2>
+<p>4.1E changes in-editor canonical placement only. <strong>4.1F</strong> remains responsible for final schema-8 validation, export reconciliation, release preflight, and retirement/reconciliation of the remaining schema-7 compatibility export path.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

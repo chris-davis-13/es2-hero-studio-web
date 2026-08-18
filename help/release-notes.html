@@ -11,7 +11,7 @@
 <body>
   <a class="skip-link" href="#content">Skip to documentation</a>
   <header class="site-header">
-    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.0-beta.15 public beta documentation</small></span></a>
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.1-beta.6 public beta documentation</small></span></a>
   </header>
   <div class="layout">
     <nav class="sidebar" aria-label="Documentation">
@@ -28,6 +28,10 @@
       <a href="user-guide.html">User Guide</a>
 <a href="templates-guidance.html">Templates and Contextual Guidance</a>
 <a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="complete-hero-skill-system.html">Complete Hero Skill System</a>
+<a href="hero-skill-eligibility.html">Hero Skill Eligibility</a>
+<a href="innate-skills.html">Innate Skills</a>
+<a href="three-tree-workspace.html">Three-Tree Workspace</a>
 <a href="guided-gameplay.html">Guided Gameplay Definition</a>
 <a href="guided-creation.html">Guided Creation and Hero Readiness</a>
 <a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
@@ -39,6 +43,7 @@
 <a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
+<a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
     </section>
 
     <section>
@@ -64,6 +69,13 @@
 <a href="release-notes-4-0l.html">4.0L Release Notes</a>
 <a href="release-notes-4-0m.html">4.0M Release Notes</a>
 <a href="release-notes-4-0n.html">4.0N Release Notes</a>
+<a href="release-notes-4-1a.html">4.1A Release Notes</a>
+<a href="release-notes-4-1b.html">4.1B Release Notes</a>
+<a href="release-notes-4-1c.html">4.1C Release Notes</a>
+<a href="release-notes-4-1d.html">4.1D Release Notes</a>
+<a href="release-notes-4-1e.html">4.1E Release Notes</a>
+<a href="schema8-release-readiness.html">Schema-8 Release Readiness</a>
+<a href="release-notes-4-1f.html">4.1F Release Notes</a>
     </section>
 
     <section>
@@ -71,71 +83,76 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-0-4-0-beta-15">ES2 Hero Studio 0.4.0-beta.15</h1>
+    <main id="content" tabindex="-1"><article><h1 id="es2-hero-studio-0-4-1-beta-6">ES2 Hero Studio 0.4.1-beta.6</h1>
 <h2 id="public-desktop-and-browser-beta">Public desktop and browser beta</h2>
-<p>ES2 Hero Studio is a dedicated authoring environment for creating and maintaining Endless Space 2 hero mods. Beta.15 adds real-time Asset Studio positioning while preserving the completed guided-authoring sequence, schema-v7 project format, and non-destructive authoring model.</p>
+<p>ES2 Hero Studio is a dedicated local-first authoring environment for creating and maintaining Endless Space 2 hero mods.</p>
+<p>Version <code>0.4.1-beta.6</code> completes the <strong>4.1 Complete Hero Skill System</strong> and advances Hero Studio releases to <strong>project schema 8</strong>. Heroes now have first-class Generic, Class, and Racial skill trees plus exactly two canonical Innate Skill assignments, with local ES2 catalog integration and schema-8 release validation.</p>
 <p>The beta is available as an unsigned Apple Silicon macOS application and as a browser edition designed for static HTTPS hosting, offline-capable use, and local project processing.</p>
-<h2 id="highlights">Highlights</h2>
+<h2 id="4-1-complete-hero-skill-system">4.1 Complete Hero Skill System</h2>
+<p>The 4.1 sequence adds:</p>
+<ul>
+<li><strong>4.1A — Foundation:</strong> schema 8, canonical Generic/Class/Racial containers, two Innate slots, authoritative local HeroDefinition relationship indexing, and lossless schema-7 migration markers.</li>
+<li><strong>4.1B — Eligibility:</strong> relationship-aware Generic, Class, and Racial eligibility with multi-affinity support and non-blocking Needs data handling.</li>
+<li><strong>4.1C — Innate Skills:</strong> dedicated authoring for exactly two non-levelable Innate assignments.</li>
+<li><strong>4.1D — Three-Tree Workspace:</strong> independent live authoring for Generic, Class, and Racial trees without treating Innate as a fourth tree.</li>
+<li><strong>4.1E — Catalog Integration:</strong> local ES2 Skill Catalog placement directly into the selected canonical tree with destination-specific eligibility.</li>
+<li><strong>4.1F — Schema-8 Release Readiness:</strong> canonical XML export, explicit legacy reconciliation, release-preflight enforcement, and canonical-tree-aware validation/search/reference tooling.</li>
+</ul>
+<h2 id="release-behavior">Release behavior</h2>
+<p>For schema-8 projects:</p>
+<ul>
+<li><code>HeroDefinitions.xml</code> emits exactly two canonical Innate <code>&lt;Skill&gt;</code> references.</li>
+<li><code>HeroDefinitions.xml</code> emits exactly three canonical <code>&lt;SkillTree&gt;</code> references.</li>
+<li>Generic, Class, and Racial project trees are exported separately.</li>
+<li>Existing ES2 skills remain reference-only and are not regenerated as project-owned definitions.</li>
+<li>Custom project skills are exported when required, including custom Innate-only definitions.</li>
+<li>Unresolved migrated schema-7 tree/direct data blocks release rather than being guessed or silently discarded.</li>
+</ul>
+<h2 id="additional-highlights">Additional highlights</h2>
 <ul>
 <li>Guided Basic mode and technical Advanced mode</li>
-<li>Hero Library with artwork thumbnails and resizable Hero Data sections</li>
-<li>Asset Studio for all four required PNG outputs</li>
-<li>Advisory artwork requirement and source-fit guidance</li>
-<li>Shared Skill Library and guided effect templates</li>
-<li>Visual Skill Tree with prerequisites, Starting Skills, and progression analysis</li>
-<li>Relationship-aware authoring recommendations</li>
-<li>Starter Hero Structures for Fleet Commander, Governor / Administrator, Balanced Generalist, and Advanced Blank Hero</li>
-<li>Guidance-only starter structures that never create skills, prerequisites, effects, or gameplay values automatically</li>
-<li>Guided Create Hero workflow with Hero Readiness recommendations</li>
-<li>ES2 Skill Catalog with searchable guided selection of existing game skills</li>
-<li>Guided gameplay selectors for affinity, class, politics, ship design, and Starting Skills</li>
-<li>Reusable skill, effect, and selected-branch templates</li>
-<li>Searchable Learning Center, contextual guidance, and glossary</li>
+<li>Hero Library and Hero Data workspaces</li>
+<li>Hero Asset Studio with real-time crop positioning</li>
+<li>Guided Create Hero workflow and Hero Readiness</li>
+<li>Relationship-Aware Recommendations</li>
+<li>Skill Tree Progression Guidance</li>
+<li>Starter Hero Structures</li>
+<li>Reusable local skill, effect, and branch templates</li>
+<li>Searchable Learning Center and glossary</li>
 <li>Multi-locale authoring and fallback review</li>
 <li>Dependency declarations and external-reference mapping</li>
 <li>Non-destructive ZIP import review and semantic XML comparison</li>
 <li>Project Health, Validation Console, and Release Preflight</li>
 <li>Validated ZIP and transactional clean-folder export</li>
 <li>Embedded <code>HeroStudioProjectSnapshot.json</code> for lossless Hero Studio reimport</li>
-<li>Atomic desktop saves and rotated pre-save backups</li>
-<li>Latest/previous autosave Recovery Center</li>
-<li>Save/Discard/Cancel protection on application close</li>
-<li>Production Electron build without a Vite development server</li>
+<li>Atomic desktop saves, rotated pre-save backups, and Recovery Center</li>
 <li>Official ES2 Hero Studio branding and bundled documentation</li>
-<li>Browser public beta with IndexedDB persistence, recovery history, local file workflows, installable PWA support, and offline application shell</li>
-</ul>
-<h2 id="beta-15-interaction-performance-update">Beta.15 interaction-performance update</h2>
-<p>Milestones 4.0J through 4.0M complete the guided-authoring sequence introduced earlier in the public beta:</p>
-<ul>
-<li><strong>4.0J — Relationship-Aware Recommendations:</strong> contextual guidance based on the active hero, skills, and related authoring data.</li>
-<li><strong>4.0K — Skill Tree Progression Guidance:</strong> explainable paths, progression islands, gateways, Starting Skill coverage, and structural review.</li>
-<li><strong>4.0L — Artwork Requirement Guidance:</strong> per-output source-fit, crop, enlargement, framing, and next-action guidance without making artistic-quality judgments.</li>
-<li><strong>4.0M — Starter Hero Structures:</strong> persistent, explainable Skill Tree frameworks that compare guidance with the creator&#039;s real tree while remaining fully non-destructive.</li>
-<li><strong>4.0N — Real-Time Asset Positioning:</strong> frame-synchronized crop dragging and immediate wheel-zoom previews with deferred project commits.</li>
+<li>Browser beta with IndexedDB recovery, local file workflows, PWA support, and an offline application shell</li>
 </ul>
 <h2 id="release-identity">Release identity</h2>
 <ul>
-<li>Version: <code>0.4.0-beta.15</code></li>
-<li>Milestone: <code>4.0N</code></li>
-<li>Project schema: <code>7</code></li>
+<li>Version: <code>0.4.1-beta.6</code></li>
+<li>Milestone: <code>4.1F</code></li>
+<li>Project schema: <code>8</code></li>
 <li>Application identifier: <code>com.chrisdavis.es2herostudio</code></li>
 <li>Desktop package: unsigned Apple Silicon DMG and ZIP</li>
 <li>Browser package: static HTTPS web application with local-first project storage</li>
 </ul>
-<p>Existing schema-v7 beta projects remain compatible with beta.15.</p>
+<p>Schema-7 Hero Studio projects remain supported through explicit migration into schema 8. Migrated legacy tree/direct data is preserved for review and must be deliberately reconciled before schema-8 release export.</p>
 <h2 id="important-limitations">Important limitations</h2>
 <ul>
 <li>one hero per exported mod package;</li>
 <li>unsigned macOS beta;</li>
 <li>no direct Steam Workshop upload;</li>
 <li>no native Windows package at this time;</li>
-<li>browser security prevents direct installed-game scanning, so browser game-data acquisition uses user-selected local files; and</li>
-<li>Starter Hero Structures and other guided systems provide recommendations rather than automatically making authoring or balance decisions.</li>
+<li>browser security prevents silent installed-game scanning, so browser ES2 game-data acquisition uses user-selected local files/folders;</li>
+<li>browser persistence is not a substitute for downloaded <code>.hsproj</code> backups; and</li>
+<li>guided systems provide recommendations rather than automatically making balance or design decisions.</li>
 </ul>
 <p>Read <code>Known-Limitations.md</code> before distributing projects or release packages.</p>
-<h2 id="browser-edition">Browser edition</h2>
-<p>The browser edition is now publicly available alongside the desktop beta. It keeps project processing local to the browser, supports persistent browser recovery, and can operate offline after the application shell has been cached.</p>
-<p>The desktop edition remains the preferred environment when direct local-file integration with an installed copy of Endless Space 2 is required.</p></article><footer>ES2 Hero Studio 0.4.0-beta.15 · Desktop and web beta · Project schema 7</footer></main>
+<h2 id="privacy-and-local-processing">Privacy and local processing</h2>
+<p>Hero project content remains local to the desktop application or browser. The local ES2 catalogs are read-only. Hero Studio does not upload installed ES2 XML or modify installed game files.</p>
+<p>Optional image-detection resources are documented separately in <code>Privacy-and-Local-Processing.md</code>.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>

@@ -1,7 +1,7 @@
 {
   "format": "es2-hero-studio-help-site",
   "version": 1,
-  "applicationVersion": "0.4.0-beta.15",
+  "applicationVersion": "0.4.1-beta.6",
   "documents": [
     {
       "slug": "index",
@@ -43,6 +43,30 @@
       "slug": "es2-skill-catalog",
       "title": "ES2 Skill Catalog",
       "source": "docs/ES2-Skill-Catalog.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "complete-hero-skill-system",
+      "title": "Complete Hero Skill System",
+      "source": "docs/Complete-Hero-Skill-System.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "hero-skill-eligibility",
+      "title": "Hero Skill Eligibility",
+      "source": "docs/Hero-Skill-Eligibility.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "innate-skills",
+      "title": "Innate Skills",
+      "source": "docs/Innate-Skills.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "three-tree-workspace",
+      "title": "Three-Tree Workspace",
+      "source": "docs/Three-Tree-Workspace.md",
       "group": "Authoring"
     },
     {
@@ -211,6 +235,54 @@
       "slug": "release-notes-4-0n",
       "title": "4.0N Release Notes",
       "source": "docs/4.0N-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-1a",
+      "title": "4.1A Release Notes",
+      "source": "docs/4.1A-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-1b",
+      "title": "4.1B Release Notes",
+      "source": "docs/4.1B-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-1c",
+      "title": "4.1C Release Notes",
+      "source": "docs/4.1C-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-1d",
+      "title": "4.1D Release Notes",
+      "source": "docs/4.1D-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "canonical-tree-catalog-integration",
+      "title": "Canonical Tree Catalog Integration",
+      "source": "docs/Canonical-Tree-Catalog-Integration.md",
+      "group": "Authoring"
+    },
+    {
+      "slug": "release-notes-4-1e",
+      "title": "4.1E Release Notes",
+      "source": "docs/4.1E-Release-Notes.md",
+      "group": "Release"
+    },
+    {
+      "slug": "schema8-release-readiness",
+      "title": "Schema-8 Release Readiness",
+      "source": "docs/Schema-8-Release-Readiness.md",
+      "group": "Release"
+    },
+    {
+      "slug": "release-notes-4-1f",
+      "title": "4.1F Release Notes",
+      "source": "docs/4.1F-Release-Notes.md",
       "group": "Release"
     },
     {

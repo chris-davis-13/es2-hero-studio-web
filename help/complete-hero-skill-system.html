@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#111318" />
+  <title>Complete Hero Skill System — ES2 Hero Studio</title>
+  <link rel="icon" href="assets/icon-32.png" type="image/png" />
+  <link rel="stylesheet" href="assets/help.css" />
+</head>
+<body>
+  <a class="skip-link" href="#content">Skip to documentation</a>
+  <header class="site-header">
+    <a class="brand" href="index.html"><img src="assets/icon-192.png" alt="" /><span><strong>ES2 Hero Studio</strong><small>0.4.1-beta.6 public beta documentation</small></span></a>
+  </header>
+  <div class="layout">
+    <nav class="sidebar" aria-label="Documentation">
+    <section>
+      <h2>Start</h2>
+      <a href="index.html">Documentation</a>
+<a href="installation.html">Install on macOS</a>
+<a href="browser-beta.html">Use the Browser Beta</a>
+<a href="getting-started.html">Getting Started</a>
+    </section>
+
+    <section>
+      <h2>Authoring</h2>
+      <a href="user-guide.html">User Guide</a>
+<a href="templates-guidance.html">Templates and Contextual Guidance</a>
+<a href="es2-skill-catalog.html">ES2 Skill Catalog</a>
+<a href="complete-hero-skill-system.html" aria-current="page" class="is-active">Complete Hero Skill System</a>
+<a href="hero-skill-eligibility.html">Hero Skill Eligibility</a>
+<a href="innate-skills.html">Innate Skills</a>
+<a href="three-tree-workspace.html">Three-Tree Workspace</a>
+<a href="guided-gameplay.html">Guided Gameplay Definition</a>
+<a href="guided-creation.html">Guided Creation and Hero Readiness</a>
+<a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
+<a href="artwork-requirement-guidance.html">Artwork Requirement Guidance</a>
+<a href="real-time-asset-positioning.html">Real-Time Asset Positioning</a>
+<a href="starter-hero-structures.html">Starter Hero Structures</a>
+<a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
+<a href="modes.html">Basic and Advanced Modes</a>
+<a href="import-xml.html">Import and XML Safety</a>
+<a href="localization-dependencies.html">Localization and Dependencies</a>
+<a href="release-export.html">Release and Export</a>
+<a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
+    </section>
+
+    <section>
+      <h2>Support</h2>
+      <a href="keyboard-accessibility.html">Keyboard and Accessibility</a>
+<a href="troubleshooting.html">Troubleshooting</a>
+<a href="recovery.html">Reliability and Recovery</a>
+    </section>
+
+    <section>
+      <h2>Release</h2>
+      <a href="known-limitations.html">Known Limitations</a>
+<a href="privacy.html">Privacy and Local Processing</a>
+<a href="feedback.html">Beta Feedback</a>
+<a href="release-notes.html">Desktop Release Notes</a>
+<a href="web-release-notes.html">Web Release Notes</a>
+<a href="release-notes-4-0f.html">4.0F Release Notes</a>
+<a href="release-notes-4-0g.html">4.0G Release Notes</a>
+<a href="release-notes-4-0h.html">4.0H Release Notes</a>
+<a href="release-notes-4-0i.html">4.0I Release Notes</a>
+<a href="release-notes-4-0j.html">4.0J Release Notes</a>
+<a href="release-notes-4-0k.html">4.0K Release Notes</a>
+<a href="release-notes-4-0l.html">4.0L Release Notes</a>
+<a href="release-notes-4-0m.html">4.0M Release Notes</a>
+<a href="release-notes-4-0n.html">4.0N Release Notes</a>
+<a href="release-notes-4-1a.html">4.1A Release Notes</a>
+<a href="release-notes-4-1b.html">4.1B Release Notes</a>
+<a href="release-notes-4-1c.html">4.1C Release Notes</a>
+<a href="release-notes-4-1d.html">4.1D Release Notes</a>
+<a href="release-notes-4-1e.html">4.1E Release Notes</a>
+<a href="schema8-release-readiness.html">Schema-8 Release Readiness</a>
+<a href="release-notes-4-1f.html">4.1F Release Notes</a>
+    </section>
+
+    <section>
+      <h2>Maintainer</h2>
+      <a href="github-release.html">GitHub Release Procedure</a>
+<a href="web-deployment.html">Deploy with GitHub Pages</a>
+    </section></nav>
+    <main id="content" tabindex="-1"><article><h1 id="complete-hero-skill-system">Complete Hero Skill System</h1>
+<h2 id="4-1a-schema-8-foundation">4.1A schema-8 foundation</h2>
+<p>Hero Studio 4.1 models an Endless Space 2 hero&#039;s skill system as five assignment relationships:</p>
+<ol>
+<li>a <strong>Generic</strong> skill tree;</li>
+<li>a <strong>Class</strong> skill tree;</li>
+<li>a <strong>Racial</strong> skill tree;</li>
+<li><strong>Innate slot 1</strong>; and</li>
+<li><strong>Innate slot 2</strong>.</li>
+</ol>
+<p>This structure is based on a read-only audit of installed Endless Space 2 game data, not on UI assumptions or hard-coded tree names. The audit found <strong>97/97</strong> HeroDefinition records with three SkillTree references and exactly <strong>two Innate/direct skill assignments</strong>.</p>
+<h2 id="relationship-driven-taxonomy">Relationship-driven taxonomy</h2>
+<p>Tree role is a property of the hero-to-tree relationship. When HeroDefinitions are present, Hero Studio derives roles structurally:</p>
+<ul>
+<li><strong>Generic</strong>: the tree referenced by every indexed HeroDefinition.</li>
+<li><strong>Class</strong>: after removing the Generic relationship, the one tree shared by all indexed heroes of a HeroClass.</li>
+<li><strong>Racial</strong>: after Generic and Class relationships are established, the remaining unique normal tree referenced by a hero.</li>
+<li><strong>Other</strong>: a tree definition that is unreferenced or cannot be classified safely from the available relationship evidence.</li>
+</ul>
+<p>If HeroDefinitions are missing because the user selected only a partial XML set, the older name-based catalog inference remains a compatibility fallback. It is not the schema-8 authority.</p>
+<h2 id="innate-direct-skill-semantics">Innate/direct skill semantics</h2>
+<p>An Innate skill is represented by its direct assignment to a hero, not by permanently changing the underlying HeroSkillDefinition into an <code>innate</code> type. This matters because installed data contains a rare skill that can appear both directly on a hero and in a tree.</p>
+<p>Schema 8 therefore stores exactly two canonical Innate assignment slots while keeping the skill definition reusable.</p>
+<h2 id="schema-7-migration">Schema-7 migration</h2>
+<p>Schema 7 stored one undifferentiated authored graph in <code>hero.tree</code> and a free-form direct-skill list in <code>startingSkillIds</code>. Those fields do not contain enough information to determine whether the authored graph was intended to be Generic, Class, or Racial.</p>
+<p>4.1A therefore follows a lossless rule:</p>
+<ul>
+<li>keep the existing authored graph intact;</li>
+<li>mark it as an unassigned legacy authored tree;</li>
+<li>do <strong>not</strong> copy or guess it into a canonical tree role;</li>
+<li>mirror the first two existing direct skills into the two canonical Innate slots; and</li>
+<li>preserve any additional direct-skill IDs as legacy compatibility data.</li>
+</ul>
+<p>The compatibility <code>hero.tree</code> and <code>startingSkillIds</code> fields remain live during 4.1A so established 4.0 editor/export behavior is unchanged. Later 4.1 milestones will migrate the user-facing workspace and exporter onto the canonical structures deliberately.</p>
+<h2 id="source-leveling-metadata">Source leveling metadata</h2>
+<p>HeroSkillDefinition data is preserved at source fidelity for later 4.1 work. The catalog records SkillLevel declarations and every MasteryLevel declaration (including its <code>Levels</code> value) instead of reducing the source to a guessed single <code>maxLevel</code> number.</p>
+<h2 id="local-game-data-guarantee">Local-game-data guarantee</h2>
+<p>The desktop app scans installed Endless Space 2 Public XML with read operations only. The browser edition indexes XML selected from the user&#039;s local device. No game-data upload is required, and Hero Studio does not write to the Endless Space 2 installation.</p>
+<h2 id="4-1b-hero-skill-eligibility">4.1B — Hero Skill Eligibility</h2>
+<p>Eligibility is evaluated per hero rather than stored as an immutable skill type. Generic is universal; Class matches <code>heroClass</code>; Racial matches <code>affinity</code>; direct-only assignments remain for 4.1C; incomplete evidence remains non-blocking Needs data. Schema remains 8. Dedicated Innate authoring, three-tree editing, full canonical-tree catalog insertion, and final schema-8 release readiness remain 4.1C–4.1F.</p>
+<h2 id="4-1c-innate-skills">4.1C — Innate Skills</h2>
+<p>4.1C makes the two canonical direct assignments editable.</p>
+<ul>
+<li>Every schema-8 hero retains exactly two Innate slots.</li>
+<li>Slots store only <code>slot</code> and <code>skillId</code>; no level or mastery value is authored on an Innate assignment.</li>
+<li>Existing ES2 and custom project skills can occupy a slot because Innate is an assignment role rather than a permanent skill-definition type.</li>
+<li>Indexed direct HeroDefinition usage is displayed as evidence, not as a hard type restriction.</li>
+<li>Extra direct IDs migrated from schema 7 remain preserved in <code>legacy.extraDirectSkillIds</code>.</li>
+<li><code>startingSkillIds</code> stays synchronized for the current XML export path until 4.1F.</li>
+</ul>
+<p>Generic/Class/Racial three-tree editing remains 4.1D; full canonical-tree catalog integration remains 4.1E; final schema-8 release/export readiness remains 4.1F.</p>
+<h2 id="4-1d-three-tree-workspace">4.1D — Three-Tree Workspace</h2>
+<p>The Skill Tree workspace now operates directly on the three canonical schema-8 containers: Generic, Class, and Racial. Switching tabs changes editor context only; it does not mutate another canonical tree, the two Innate assignments, or the preserved legacy compatibility graph. Branch templates can target a canonical role explicitly. Full role-aware catalog placement follows in 4.1E; final schema-8 validation/export reconciliation remains 4.1F.</p>
+<h2 id="4-1f-schema-8-release-readiness">4.1F — Schema-8 Release Readiness</h2>
+<p>4.1F completes the Complete Hero Skill System. Current releases are generated from exactly two canonical Innate assignments and the Generic, Class, and Racial schema-8 trees. Unresolved schema-7 authored-tree or extra-direct data blocks release until the user explicitly reconciles it. Shared validation, reference, localization, search, and release tooling now treat canonical trees as first-class. The local/read-only ES2 data policy remains unchanged.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
+  </div>
+</body>
+</html>

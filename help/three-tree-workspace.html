@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <meta name="theme-color" content="#111318" />
-  <title>Import and XML Safety — ES2 Hero Studio</title>
+  <title>Three-Tree Workspace — ES2 Hero Studio</title>
   <link rel="icon" href="assets/icon-32.png" type="image/png" />
   <link rel="stylesheet" href="assets/help.css" />
 </head>
@@ -31,7 +31,7 @@
 <a href="complete-hero-skill-system.html">Complete Hero Skill System</a>
 <a href="hero-skill-eligibility.html">Hero Skill Eligibility</a>
 <a href="innate-skills.html">Innate Skills</a>
-<a href="three-tree-workspace.html">Three-Tree Workspace</a>
+<a href="three-tree-workspace.html" aria-current="page" class="is-active">Three-Tree Workspace</a>
 <a href="guided-gameplay.html">Guided Gameplay Definition</a>
 <a href="guided-creation.html">Guided Creation and Hero Readiness</a>
 <a href="skill-tree-progression-guidance.html">Skill Tree Progression Guidance</a>
@@ -40,7 +40,7 @@
 <a href="starter-hero-structures.html">Starter Hero Structures</a>
 <a href="relationship-aware-recommendations.html">Relationship-Aware Recommendations</a>
 <a href="modes.html">Basic and Advanced Modes</a>
-<a href="import-xml.html" aria-current="page" class="is-active">Import and XML Safety</a>
+<a href="import-xml.html">Import and XML Safety</a>
 <a href="localization-dependencies.html">Localization and Dependencies</a>
 <a href="release-export.html">Release and Export</a>
 <a href="canonical-tree-catalog-integration.html">Canonical Tree Catalog Integration</a>
@@ -83,21 +83,29 @@
       <a href="github-release.html">GitHub Release Procedure</a>
 <a href="web-deployment.html">Deploy with GitHub Pages</a>
     </section></nav>
-    <main id="content" tabindex="-1"><article><h1 id="import-review-and-xml-safety">Import Review and XML safety</h1>
-<h2 id="review-before-applying">Review before applying</h2>
-<p>Choose <strong>Review Import ZIP</strong> rather than replacing the open project directly. Hero Studio analyzes the archive, identifies recognized files, preserves unsupported content where possible, and compares source XML with regenerated XML.</p>
-<p>The current project remains unchanged until <strong>Apply Reviewed Import</strong> is selected.</p>
-<h2 id="hero-studio-snapshots">Hero Studio snapshots</h2>
-<p>ZIPs created by Hero Studio include <code>HeroStudioProjectSnapshot.json</code>. A valid snapshot restores editor-only data such as prerequisite edges, guided-effect metadata, stable IDs, localization structure, dependency catalogs, external references, and release settings.</p>
-<p>Image bytes are rehydrated from the packaged PNG files rather than duplicated inside the snapshot.</p>
-<h2 id="third-party-zips">Third-party ZIPs</h2>
-<p>When no valid Hero Studio snapshot exists, the XML importer reconstructs the project from recognized ES2 files. Unsupported files are listed for preservation or review.</p>
-<p>A malformed snapshot produces a warning and falls back to XML import rather than being trusted.</p>
-<h2 id="semantic-comparison">Semantic comparison</h2>
-<p>XML formatting differences do not necessarily represent game-data changes. Semantic comparison normalizes XML structure so whitespace-only changes can be separated from meaningful additions, removals, and modifications.</p>
-<h2 id="undo-and-restoration">Undo and restoration</h2>
-<p>Applying a reviewed import is a single Undo/Redo operation. Hero Studio also retains a pre-import project snapshot for explicit restoration.</p>
-<p>Save a separate <code>.hsproj</code> copy before importing complex third-party mods.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
+    <main id="content" tabindex="-1"><article><h1 id="three-tree-workspace">Three-Tree Workspace</h1>
+<p>Milestone <strong>4.1D</strong> makes the schema-8 hero skill system visible and editable as three independent canonical workspaces: <strong>Generic</strong>, <strong>Class</strong>, and <strong>Racial</strong>.</p>
+<h2 id="the-three-canonical-roles">The three canonical roles</h2>
+<ul>
+<li><strong>Generic</strong> — the universal hero-skill relationship.</li>
+<li><strong>Class</strong> — the tree associated with the active hero&#039;s <code>heroClass</code> relationship.</li>
+<li><strong>Racial</strong> — the tree associated with the active hero&#039;s <code>affinity</code> relationship. Multi-affinity racial relationships discovered from local ES2 data remain valid; 4.1D does not collapse them to a name guess.</li>
+</ul>
+<p>There is deliberately no fourth <strong>Other</strong>, <strong>Relics</strong>, or <strong>Innate</strong> tree tab. Innate Skills remain the two non-levelable direct assignments authored in Hero Data.</p>
+<h2 id="independent-authoring">Independent authoring</h2>
+<p>Each tab reads and writes only <code>hero.skillSystem.trees[generic|class|racial]</code>. Adding, moving, editing, duplicating, deleting, copying, pasting, connecting, validating, or checking progression in one canonical tree does not mutate either of the other two trees.</p>
+<p>The selected role also follows skill-effect editing and branch-template capture/application. Branch templates can be targeted explicitly to Generic, Class, or Racial from Template Library.</p>
+<h2 id="legacy-schema-7-trees">Legacy schema-7 trees</h2>
+<p>A migrated schema-7 <code>hero.tree</code> graph remains preserved as compatibility data. If Hero Studio cannot prove its role, 4.1D does <strong>not</strong> move or relabel it automatically. The Skill Tree workspace shows a preservation notice instead of guessing.</p>
+<p>This is intentional lossless migration behavior. Final compatibility/export reconciliation belongs to <strong>4.1F</strong>.</p>
+<h2 id="local-game-data-and-safety">Local game data and safety</h2>
+<p>The 4.1 skill system remains a local-game-data workflow. Desktop discovery and browser-selected ES2 Public/XML data stay read-only; Hero Studio does not modify installed Endless Space 2 files and does not require uploading game data.</p>
+<h2 id="milestone-boundaries">Milestone boundaries</h2>
+<ul>
+<li><strong>4.1D:</strong> canonical Generic/Class/Racial authoring workspace.</li>
+<li><strong>4.1E:</strong> role-aware ES2 catalog integration with those canonical trees.</li>
+<li><strong>4.1F:</strong> schema-8 export, validation, migration reconciliation, and release readiness.</li>
+</ul></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>
