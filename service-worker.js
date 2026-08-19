@@ -1,5 +1,5 @@
 /* ES2 Hero Studio Web Beta 0.4.1-beta.6 */
-const CACHE_NAME = "es2-hero-studio-web-0.4.1-beta.6-da091d2e59bd94eb";
+const CACHE_NAME = "es2-hero-studio-web-0.4.1-beta.6-4ca6234cde9389b6";
 const PRECACHE_URLS = [
   "./",
   "./.DS_Store",

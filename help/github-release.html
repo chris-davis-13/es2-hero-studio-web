@@ -111,21 +111,25 @@ npm run preview:web-beta</code></pre>
 <p>Review the public-repository diff, then commit with:</p>
 <pre><code class="language-text">Publish ES2 Hero Studio Web 0.4.1-beta.6</code></pre>
 <p>Push the public repository and verify the hosted browser application before creating the final source release tag.</p>
-<h2 id="6-draft-the-github-release-in-the-private-source-repository">6. Draft the GitHub Release in the private source repository</h2>
+<h2 id="6-create-the-private-source-provenance-tag">6. Create the private source provenance tag</h2>
+<p>Create private tag <code>v0.4.1-beta.6</code> in <code>es2-hero-studio</code> against the exact final tested <code>main</code> commit.</p>
+<p>This private tag records source provenance only. Do <strong>not</strong> use a Release in the private repository as the public download page, because beta testers without repository access cannot download private-repository release assets.</p>
+<h2 id="7-publish-the-public-github-pre-release-from-the-distribution-repository">7. Publish the public GitHub pre-release from the distribution repository</h2>
 <ol>
-<li>Open private <code>es2-hero-studio</code>.</li>
+<li>Open public <code>chris-davis-13/es2-hero-studio-web</code>.</li>
 <li>Choose <strong>Releases</strong> → <strong>Draft a new release</strong>.</li>
-<li>Create tag <code>v0.4.1-beta.6</code> against the exact final tested <code>main</code> commit.</li>
+<li>Create public tag <code>v0.4.1-beta.6</code> against the exact public web commit that passed hosted beta.6 acceptance.</li>
 <li>Title: <code>ES2 Hero Studio 0.4.1-beta.6</code>.</li>
 <li>Mark as a <strong>pre-release</strong>.</li>
-<li>Use <code>docs/Public-Beta-Release-Notes.md</code>.</li>
-<li>Attach the Apple Silicon DMG and ZIP, desktop checksums, browser beta ZIP, browser checksum/manifest files as appropriate, and bundled example <code>.hsproj</code>.</li>
+<li>Use the release notes from private source file <code>docs/Public-Beta-Release-Notes.md</code>.</li>
+<li>Attach the verified Apple Silicon DMG and ZIP, desktop checksum/verification files, the browser beta ZIP and appropriate browser manifest/checksum files, and the bundled example <code>.hsproj</code> as appropriate.</li>
 <li>Review every attachment for private or third-party content.</li>
-<li>Publish.</li>
+<li>Publish from the <strong>public distribution repository</strong>.</li>
 </ol>
-<p>Publishing the browser site does not require making the source repository public.</p>
-<h2 id="7-preserve-the-release-state">7. Preserve the release state</h2>
-<p>Published beta artifacts are immutable. Do not replace a published DMG, ZIP, checksum file, public web commit, or tag with corrected content; use a new version/tag for post-publication corrections.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
+<p>The private and public repositories may use the same version tag name because they are separate repositories. The private tag identifies the tested source commit; the public tag identifies the tested distribution commit.</p>
+<p>Publishing the browser site and desktop downloads does not require making the source repository public.</p>
+<h2 id="8-preserve-the-release-state">8. Preserve the release state</h2>
+<p>Published beta artifacts are immutable. Do not replace a published DMG, ZIP, checksum file, public web commit, private source tag, or public distribution tag with corrected content; use a new version/tag for post-publication corrections.</p></article><footer>ES2 Hero Studio 0.4.1-beta.6 · Desktop and web beta · Project schema 7</footer></main>
   </div>
 </body>
 </html>
